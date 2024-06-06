@@ -12,11 +12,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!--  Inicializa o SDK com a chave pública -->
+    <script src="config.js"></script>
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init({
-              publicKey: "u4lOYDncmI3-nm3OA",
+                publicKey: emailjsConfig.publicKey,
             });
         })();
     </script>
@@ -34,7 +35,8 @@
 
                 event.preventDefault();
                 // Submetemos nosso formulário de contato e o enviamos através do EmailJS, usando nosso Serviço de Contato e Formulário de Contato :
-                emailjs.sendForm('service_l0j3o33', 'contact_form', this)
+                emailjs.sendForm(emailjsConfig.idService, emailjsConfig.idModelEmail, this)
+                    
                     .then(() => {
 
                         //Mostra o container menssagem, caso sucesso.
