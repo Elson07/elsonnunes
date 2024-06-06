@@ -1,0 +1,463 @@
+/* Tag global */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+section{
+    padding-top: 10vh;
+}
+
+footer{
+    text-align: center;
+    padding: 2rem;
+}
+
+p{
+    margin: 0px 8px 7px 8px;
+}
+
+h1{
+    margin-left: .5rem;
+    color: rgb(48, 48, 48);
+    text-shadow: 1px 0px 3px rgb(190, 190, 190);
+}
+
+h2{
+    color: rgb(75, 75, 75);
+}
+
+h3{
+    color: rgb(100, 100, 100);
+    margin: 16px;
+}
+
+h4{
+    color: rgb(126, 126, 126);
+    margin: 8px;
+}
+
+/* Titulos */
+.titulo-1{
+    font-size: 1.6rem;
+}
+
+.titulo-2{
+    font-size: 1.3rem;
+    margin-left: 8px;
+}
+
+.titulo-3{
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+
+/* stacks */
+.stacks div{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.stacks span{
+    /*border: 1px solid black;*/
+    padding: .5rem;
+    display: inline-block;
+    width: 6rem;
+    text-align: center;
+    border-radius: 2rem;
+    margin-bottom: 4px;   
+    user-select: none; 
+}
+
+.stack-javascript{
+    border: 1px solid yellow;
+    background-color: yellow;
+    font-weight: 600;
+}
+
+.stack-html{
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+    font-weight: 600;
+}
+
+.stack-css{
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+}
+
+.stack-sass{
+    border: 1px solid rgb(255, 64, 96);
+    background-color: rgb(255, 64, 96);
+    color: white;
+    font-weight: 600;
+}
+
+.stack-bootstrap{
+    border: 1px solid purple;
+    background-color: purple;
+    color: white;
+    font-weight: 600;
+}
+
+.stack-php{
+    border: 1px solid rgb(77, 77, 160);
+    background-color: rgb(77, 77, 160);
+    color: white;
+    font-weight: 600;
+}
+
+.stack-java{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+}
+
+.stack-python{
+    border: 1px solid yellow;
+    background-color: rgb(50, 50, 90);
+    color: yellow;
+    font-weight: 600;
+}
+
+.stack-mysql{
+    border: 1px solid orange;
+    background-color: rgb(54, 54, 136);
+    color: rgb(253, 182, 49);
+    font-weight: 600;
+}
+
+.stack-github{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+.stack-node{
+    border: 1px solid gray;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+}
+
+.stack-composer{
+    border: 1px solid rgb(202, 191, 191);
+    background-color: rgb(87, 59, 0);
+    color: rgb(214, 187, 187);
+    font-weight: 600;
+}
+
+.stack-emailsjs{
+    border: 1px solid orange;
+    background-color: orange;
+    color: black;
+    font-weight: 600;
+}
+
+.stack-vazio{
+    border: 1px solid white;
+    background-color: white;
+    color: white;
+    font-weight: 600;
+}
+
+
+/* Cards */
+.container-formacao{
+    margin: 20px;
+}
+
+.container-curso{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cabecalho-curso{
+    border: 1px solid black; 
+    padding: 6px 8px; 
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-cabecalho-curso{
+    position: absolute; 
+    top: .5rem; 
+    right: .5rem;
+    background-color: white;
+}
+
+.corpo-formacao-curso{
+    padding: 6px 8px; 
+    border-left: 1px solid black; 
+    border-bottom: 1px solid black; 
+    border-right: 1px solid black;
+}
+
+.corpo-formacao-curso span{
+    border: 1px solid black;
+    padding: .5rem;
+    display: inline-block;
+    text-align: center;
+    margin-right: .5rem;
+    border-radius: 2rem;
+    margin-bottom: .5rem;
+}
+
+.corpo-formacao-curso strong{
+    color: rgb(107, 107, 107);
+}
+
+.corpo-formacao-curso div{
+    height: 200px; 
+    overflow: auto;
+    margin-top: .5rem;
+}
+
+
+/* Formatação nav */
+.cabecalho-navegacao-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.884);
+    box-shadow: 1px 0px 10px rgb(148, 148, 148);
+    z-index: 1;
+    user-select: none;
+}
+
+.nav-flex{
+    display: flex;
+} 
+
+.nav-flex h1{
+    width: 50%;
+}
+
+.nav-block{
+    display: block;
+}
+
+.nav-block h1{
+    width: 100%;
+}
+
+.nav-horizontal {
+    display: inline;
+    width: 68%;
+    text-align: right;
+}
+.nav-horizontal ul li{
+    display: inline;
+}
+
+.nav-vertical{
+    border-top: 1px solid rgb(190, 190, 190);
+}
+
+.nav-vertical ul li{
+    display: block;
+    padding-top: .8rem;
+    text-align: center;
+}
+
+ul li a{
+    text-decoration: none;
+    padding-right: 10px;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 0px 3px rgb(233, 233, 233);
+}
+
+ul li a:hover{
+    color: rgb(110, 110, 110);
+}
+
+.icon-nav-container{
+    display: inline-block;
+    
+    padding-right: .8rem;
+}
+
+.icon-nav-img{
+    position: relative;
+    top: 7px;
+}   
+
+
+.btn-nav-hamburger{
+    position: absolute;
+    top: 1rem;
+    right: .4rem;
+
+    cursor: pointer;
+}
+.btn-nav-closed{
+    position: absolute;
+    top: 1rem;
+    right: .4rem;
+    cursor: pointer;
+}
+
+.apresentacao-flex{
+    text-align: center; 
+    display: flex; 
+    
+}
+
+.apresentacao-block{
+    text-align: center; 
+    display: block; 
+}
+
+.caixa-acao-pronpt{
+    background: black;
+    cursor: pointer;
+}
+
+.caixa-acao-pronpt-x{
+    background: black;
+    cursor: pointer;
+}
+
+.caixa-acao-pronpt-x:hover{
+    background: red;
+}
+
+.caixa-acao-pronpt:hover{
+    background: rgb(48, 48, 48);
+}
+
+.texto-animado{
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    white-space: pre;
+}
+
+/* Card Portifólio */
+.container-portifolio{
+    display: inline-block;
+    margin: 10px;
+}
+
+.cabecalho-portifolio{
+    border: 1px solid black; 
+    padding: 6px 8px; 
+    position: relative;
+}
+
+.cabecalho-link-portifolio{
+    position: absolute; 
+    right: 10px; 
+    top: -6px;
+}
+
+.cabecalho-link-portifolio-icon{
+    position: relative; 
+    top: 8px;
+}
+
+
+.portifolio-img{
+    margin: auto; 
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    overflow: auto;
+    z-index: 0;
+}
+
+.btn-mostrar-descricao{
+    padding: 4px; 
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+}
+
+.portifolio-descricao{
+   padding: 4px; 
+   border-top: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+.rodape-portifolio{
+    border: 1px solid black; 
+    height: 50px;
+    padding-right: 4px;
+}
+
+.rodape-portifolio div{
+    width: 100%;
+    margin: 2px 4px 0px 4px;
+    display: flex;
+
+}
+
+.rodape-portifolio strong{
+    color: rgb(56, 56, 56);
+    display: inline-block;
+    user-select: none;
+    margin-top: 5px;
+}
+
+.radape-portifolio-stacks{
+    overflow-x: auto;
+}
+
+.radape-portifolio-stacks-hidden{
+    overflow-x: hidden;
+}
+
+.rodape-portifolio span{
+    display: block;
+    padding: 2px 4px 2px 4px;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 2px;
+    user-select: none;
+    margin-right: 4px;
+}
+
+/* Formulário */
+.inputs{
+    margin-bottom: .4rem;
+    width: 47.4%;
+    padding: .4rem;
+}
+
+.input-textarea{
+    padding: .4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.submit-mensagem-active{
+    margin-top: .4rem;
+    background: green;
+    color: white;
+    border: 1px solid green;
+    padding: .4rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: block;
+    width: 243px;
+}
+
+.submit-mensagem-inactive{
+    margin-top: .4rem;
+    background: gray;
+    color: white;
+    border: 1px solid gray;
+    padding: .4rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: block;
+    width: 243px;
+}

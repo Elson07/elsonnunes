@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Full Stack</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/index.js"></script>
+
+    <!-- E-mail JS -->
+    <!--  SDK EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!--  Inicializa o SDK com a chave pública -->
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "u4lOYDncmI3-nm3OA",
+            });
+        })();
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+               
+            //Constroi o container de aviso de evio de memssagem.
+            this.contructFeedBeckSendEmail();
+            
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+
+                // Atribuir animação de subminção de dados 
+                document.getElementById('enviar').innerHTML = '<img width="16px" src="assets/imagens/loading.gif" alt="loading">';
+
+                event.preventDefault();
+                // Submetemos nosso formulário de contato e o enviamos através do EmailJS, usando nosso Serviço de Contato e Formulário de Contato :
+                emailjs.sendForm('service_l0j3o33', 'contact_form', this)
+                    .then(() => {
+
+                        //Mostra o container menssagem, caso sucesso.
+                        document.getElementById('mesage-feedback').style.display = '';
+
+                        // Tratativa no caso de sucesso 
+                        console.log('SUCCESS!');
+
+                        //Escre algus valores no container de avisso de envio de massagem, casso de sucesso 
+                        document.getElementById('message-user').innerText = document.getElementById('nome').value;
+                        
+
+                        // Linpa o formalario 
+                        document.getElementById('nome').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('telefone').value = '';
+                        document.getElementById('assunto').value = '';
+                        document.getElementById('message').value = '';
+                        document.getElementById('receber-contato').checked = false;
+
+                        // Retorna ao estado anterior btn enviar
+                        document.getElementById('enviar').innerHTML = 'Enviar';
+                        document.getElementById('enviar').className = 'submit-mensagem-inactive';
+
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                });
+                
+            });
+        }
+    </script>
+
+    <!--\\Fim E-mail JS -->
+
+</head>
+<body id="resolucao">   
+
+    <style>
+
+    </style>
+
+    <!-- Menu de navegação -->
+    <header class="cabecalho-navegacao-header">
+
+        <div id="contaniner-nav" class="nav-flex">
+
+            <h1 class="titulo-1">
+                &#60;/&#62;Developer Full Stack
+            </h1>
+            
+            <nav id="nav" class="nav-horizontal">
+
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#portifolio">Portifólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+
+                    <!-- GitHub -->
+                    <li>
+                        <a class="icon-nav-container" href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github icon-nav-img" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <!-- YouTube -->
+                    <li>
+                        <a class="icon-nav-container" href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube icon-nav-img" viewBox="0 0 16 16">
+                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <!-- FaceBook -->
+                    <li>
+                        <a class="icon-nav-container" href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook icon-nav-img" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                            </svg>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Btn Menu -->
+            <div id="btn-nav-hamburger">
+                <svg onclick="openMenu()" class="btn-nav-hamburger" id="menu-nav" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </div>
+        
+        </div>
+
+    </header>
+    <!--//Fim Menu de navegação -->
+
+    <article id="artigo">
+
+        <!-- Home -->
+        <section id="home">
+            
+            <!-- Apresentação -->
+            <div id="apresentacao" class="apresentacao-flex">
+
+                <!-- Container -->
+                <div id="tex-apresentacao" style="width: 49%; margin: auto; text-align: left; font-family: 'Fira Code', monospace; user-select: none;">
+                    
+                    <!--Pronpt de comando-->
+                    <div style="border: 1px solid rgb(73, 73, 73);">
+
+                        <!-- Cabeçalho -->
+                        <div style="background-color: black; color: white; padding: 4px; position: relative;">
+
+                            <!-- Icon terminal -->
+                            <div style="display: inline-block;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                    <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z"/>
+                                </svg>
+                            </div>
+
+                            <!-- texto -->
+                            <div style="display: inline-block; position: relative; top: -5px;">
+                                Pronpt de Comando
+                            </div>
+                            <!--   _                      
+                                _ |_| X 
+                            -->
+                            <div style="display: inline-block; position: absolute; right: 0px;">
+
+                                <div class="caixa-acao-pronpt" style="display: inline-block;">
+                                    <svg style="position: relative; top: -6px;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                        <path d="M240-120v-80h480v80H240Z"/>
+                                    </svg>
+                                </div>
+
+                                <div class="caixa-acao-pronpt" style="display: inline-block;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"/>
+                                    </svg>
+                                </div>
+                                
+                                <div class="caixa-acao-pronpt-x" style="display: inline-block;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                    </svg>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--//Fim Cabeçalho -->
+
+                        <!-- Conteudo -->
+                        <div style="height: 10rem; background-color: rgb(53, 53, 53); color: rgb(228, 228, 228);">
+                            <div id="text-1">
+                                
+                            </div>
+                            <div id="text-2">
+                                 
+                            </div>
+
+                            <script>
+                                let textos = ["C:\\User> Olá, meu nome é Elson :)", "C:\\User> E sou desenvolvedor Full Stack"];
+                                let elementos = [document.getElementById('text-1'), document.getElementById('text-2')];
+                                const velocidade = 100;
+
+                                async function escreverTexto(texto, elemento) {
+                                    let textoApresentacao = 'C:\\User>';
+                                    elemento.innerText = textoApresentacao;
+                                    for (let i = 8; i < texto.length; i++) {
+                                        
+                                        if(i < (texto.length) - 2){
+                                            setTimeout(()=>{
+                                                
+                                                elemento.innerText =  textoApresentacao + '|';
+                                            }, 150)
+                                            textoApresentacao = textoApresentacao.replace('|', '');
+                                        }
+                                        
+                                        textoApresentacao += texto[i];
+                                        elemento.innerText = textoApresentacao;
+                                        
+                                        await new Promise(resolve => setTimeout(resolve, velocidade));
+                                    }
+                                }
+
+                                async function executarEscritaSequencial() {
+                                    await escreverTexto(textos[0], elementos[0]);
+                                    await escreverTexto(textos[1], elementos[1]);
+                                }
+
+                                executarEscritaSequencial();
+                            </script>
+                        </div>
+                        <!--\\Fim Conteudo -->
+                    
+                    </div>
+                    <!--\\Fim Pronpt de comando-->
+                
+                </div>
+                <!--\\Fim Container -->
+
+                <div id="img-apresentacao" style=" width: 49%; margin: auto;">
+                    <img width="70%" style="border-radius: 100rem;" src="assets/imagens/meuAvatar.png" alt="">
+                </div>
+
+            </div>
+            <!--\\Fim Apresentação -->
+
+
+            <div style="margin-top: 30px;" class="">
+
+                <!--
+                <h2 class="titulo-1">Abilidades</h2>
+                <p>
+                    Como desenvolvedor Full Stack, tenho experiência com várias linguagens de programação, incluindo Java para desenvolvimento Android, PHP para aplicativos de 
+                    servidor web, Python para diversas aplicações (IoT, testes automatizados, jogos, etc.), C# no desenvolvimento de jogos e C++ em IoT. 
+                </p>
+                <p>
+                    No entanto, meu carro-chefe é o PHP. Meus projetos geralmente são desenvolvidos seguindo o padrão arquitetônico MVC, o que garante fácil manutenção e uma 
+                    boa orientação e estruturação do código.
+                </p>
+                <p>
+                    Caso esteja procurando um profissional com meu perfil, por favor, entre em <a style="color: rgb(73, 73, 73);" href="#contato">contato</a>!
+                </p>
+                -->
+
+                <h2 class="titulo-1">Stacks</h2><!--<h3 class="titulo-2">Stacks</h3>-->
+
+                <div class="stacks" >
+                    <h3 class="titulo-2">Front And</h3><!--<h4 class="titulo-3">Front And</h4>-->
+                    <div>
+                        <span class="stack-javascript">JavaScript</span>
+                        <span class="stack-html">HTML5</span>
+                        <span class="stack-css">CSS3</span>
+                        <span class="stack-sass">SASS</span>
+                        <span class="stack-bootstrap">Bootstrap</span>
+                    </div>
+
+                    <h3 class="titulo-2">Back And</h3><!--<h4 class="titulo-3">Back And</h4>-->
+                    <div>
+                        <span class="stack-php">PHP</span>
+                        <span class="stack-java">JAVA</span>
+                        <span class="stack-python">Python</span>
+                        <span class="stack-mysql">MySQL</span>
+                        <span class="stack-github">Github</span>
+                        <span class="stack-node">Node</span>
+                        <span class="stack-composer">Composer</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sobre -->
+        <section id="sobre">
+            
+            <div>
+                
+                <h2 class="titulo-1">Sobre</h2>
+
+                <p style="margin-bottom: .2rem;">
+                    Sou de Jataizinho, Paraná, formado em Análise e Desenvolvimento de Sistemas pela PUCPR. Programo desde os 13 anos de idade e gosto de ler, jogar videogame 
+                    e desenvolver sistemas como serviços de marketplace, sites, jogos e IoT.
+                </p>
+
+                <p style="margin-bottom: .2rem;">
+                    No que diz respeito a valores, fui criado em um ambiente familiar saudável e cristão, que tomo como base moral e que faz parte de quem eu sou.
+                </p>
+
+                <p>
+                    Respeito a todos os indivíduos, independentemente de sua crença, identidade ou raça, e estou sempre disposto a aprender e colaborar com o próximo.
+                </p>
+
+                <h3 class="titulo-2">Formação</h3>
+
+
+                <div class="container-formacao">
+
+                    <!-- Container curso -->
+                    <div class="container-curso">
+                        <!-- Cabeçalho -->
+                        <header onclick="openCurso(1)" class="cabecalho-curso">
+                            <strong>Análise e Desenvolvimento de Sistemas</strong>
+                            <!--Btn mostrar conteudo-->
+                            <div id="chevron-1" class="btn-cabecalho-curso">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+                        </header>
+                        <!-- Corpo-->
+                        <div style="display: none;" id="curso-1" class="oculto">
+                            <strong style="display: block;"> PONTIFÍCIA UNIVERSIDADE CATÓLICA DO PARANÁ</strong>
+                            <div>
+                                <span>Raciocínio Computacional</span>
+                                <span>Teologia e Sociedade</span>
+                                <span>Fundamentos de Programação Web</span>
+                                <span>Matemática Aplicada à Computação</span>
+                                <span>Introdução à Filosofia</span>
+                                <span>Fundamentos da Programação Orientada a Objetos</span>
+                                <span>Métodos de Pesquisa e Ordenação em Estruturas de Dados</span>
+                                <span>Comunicação Aplicada</span>
+                                <span>Empreendedorismo e Inovação</span>
+                                <span>Banco de Dados para Tecnologia da Informação</span>
+                                <span>Fundamentos de Internet das Coisas</span>
+                                <span>Ética</span>
+                                <span>Fundamentos Engenharia de Software</span>
+                                <span>Segurança da Tecnologia da Informação</span>
+                                <span>Especificação de Sistemas de Informação</span>
+                                <span>Gestão de Projetos em Computação</span>
+                                <span>Inteligência Analítica em Negócios</span>
+                                <span>Fundamentos de Big Data</span>
+                                <span>Projeto de Sistemas de Informação</span>
+                                <span>Educação, Identidade e Solidariedade</span>
+                                <span>Interação Humano Computador</span>
+                                <span>Internet das Coisas em um Mundo Conectado</span>
+                                <span>Métodos Ágeis em TI</span>
+                                <span>Gestão de Serviços de Tecnologia da Informação</span>
+                                <span>Cloud Computing</span>
+                                <span>Desenvolvimento para dispositivos móveis</span>
+                                <span>Sistemas Web Seguros</span>
+                                <span>Tecnologias Para Desenvolvimento Web</span>
+                                <span>DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Fim Container curso -->
+
+                    <!-- Container curso -->
+                    <div class="container-curso">
+                        <!-- Cabeçalho -->
+                        <header onclick="openCurso(2)" class="cabecalho-curso">
+                            <strong>Desenvolvimento Web</strong>
+                            <!--Btn mostrar conteudo-->
+                            <div id="chevron-2" class="btn-cabecalho-curso">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+                        </header>
+                        <!-- Corpo-->
+                        <div id="curso-2" style="display: none;" class="oculto">
+                            <strong style="display: block;">Udemy</strong>
+                            <div>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>CSS3 Intermediário & avançado</span>
+                                <span>HTML5 & CSS3</span>
+                                <span>Bootstrap 4 & Design responsivo</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap 4 & Design responsivo</span>
+                                <span>ECMAScript 2015 (ES6) e Orientação a Objetos</span>
+                                <span>Linguagem de Programação PHP  (Hypertext Preprocessor)</span>
+                                <span>PHP e Orientação a Objetos</span>
+                                <span>Banco de dados MySQL</span>
+                                <span>Ajax</span>
+                                <span>PHP com PDO e MySQL</span>
+                                <span>Publicação de aplicações Web na Internet</span>
+                                <span>jQuery</span>
+                                <span>Padrão de arquitetura MVC com PHP</span>
+                                <span>API com Slim Framework</span>
+                                <span>SASS</span>
+                                <span>Criando aplicações Mobile com IONIC</span>
+                                <span>WordPress</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Fim Container curso -->
+
+                    <!-- Container curso -->
+                    <div class="container-curso">
+                        <!-- Cabeçalho -->
+                        <header onclick="openCurso(3)" class="cabecalho-curso">
+                            <strong>Desenvolvimento de Apps Android usando Java</strong>
+                            <!--Btn mostrar conteudo-->
+                            <div id="chevron-3" class="btn-cabecalho-curso">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+                        </header>
+                        <!-- Corpo-->
+                        <div style="display: none;" id="curso-3" class="oculto">
+                            <strong style="display: block;">Udemy</strong>
+                            <div>
+                                <span>Lógica e algoritimos</span>
+                                <span>Java - Fundamentos</span>
+                                <span>Java - Conceitos iniciais</span>
+                                <span>Java - Funções</span>
+                                <span>Java - Controle de fluxo</span>
+                                <span>Exceções</span>
+                                <span>Testes unitários</span>
+                                <span>[Java] Arrays</span>
+                                <span>[Java] Conceitos - Orientação a objetos</span>
+                                <span>[Java] Herança</span>
+                                <span>Layout - Conceitos de layout e LinearLayout</span>
+                                <span>Convenções de código</span>
+                                <span>Layout - RelativeLayout</span>
+                                <span>AndroidX e aplicações antigas</span>
+                                <span>Layout - Elementos</span>
+                                <span>Layout - ConstraintLayout</span>
+                                <span>Internacionalização</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Fim Container curso -->
+
+                    <!-- Container curso -->
+                    <div class="container-curso">
+                        <!-- Cabeçalho -->
+                        <header onclick="openCurso(4)" class="cabecalho-curso">
+                            <strong>Python</strong>
+                            <!--Btn mostrar conteudo-->
+                            <div id="chevron-4" class="btn-cabecalho-curso">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+                        </header>
+                        <!-- Corpo-->
+                        <div style="display: none;" id="curso-4" class="oculto">
+                            <strong style="display: block;">Curso em Vídeo</strong>
+                            <div>
+                                <span>Tratamento de Dados</span>
+                                <span>Usando módulos</span>
+                                <span>Condições em Python</span>
+                                <span>Repetições em Python</span>
+                                <span>Tuplas em Python</span>
+                                <span>Listas em Python</span>
+                                <span>Dicionários em Python</span>
+                                <span>Funções em Python</span>
+                                <span>Modularização em Python</span>
+                                <span>Tratamento de Erros em Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//Fim Container curso -->
+
+                </div>
+
+
+                <!-- CV -->
+                <div style="width: 100%; margin-top: 2rem;">
+
+                    <div style="text-align: center;">
+                        <a style="color: white; background-color: rgb(94, 94, 94); padding: 8px; text-decoration: none; border-radius: 100px;" href="">Dowload CV</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Portifólio -->
+        <section id="portifolio">
+
+            <div>
+                <!-- título -->
+                <h2 class="titulo-1">Projetos</h2>
+                
+                <!-- Grupo container portifólio -->
+                <di id="grupo-container-portifolio">
+
+                    <!-- container portifólio -->
+                    <div class="container-portifolio">
+
+                        <!-- Cabeçalho -->
+                        <div class="cabecalho-portifolio">
+                            <strong>vBook</strong>
+                            
+                            <span class="cabecalho-link-portifolio">
+                                
+                                <a href="https://vbook.infinityfreeapp.com/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-link-45deg cabecalho-link-portifolio-icon" viewBox="0 0 16 16">
+                                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                                    </svg>
+                                
+                                    https://vbook.infinityfreeapp.com/
+
+                                </a>
+
+                            </span>
+
+                        </div>
+
+                        <!-- Container imagem -->
+                        <div class="portifolio-img">
+                            <a href="https://vbook.infinityfreeapp.com/" target="_blank">
+                                <img width="100%" src="assets/imagens/vbook.png" alt="Imagem do aplicativo vBook">
+                            </a>
+                        </div>
+
+                        <!-- Btn vermais -->
+                        <div onclick="btnVermais(1)" style="position: relative; top: 0; height: 20px;" class="btn-mostrar-descricao">
+                            <div style="position: absolute; top: 6px; left: 8px;">
+                                Ver mais
+                            </div>
+                            <div id="container-icon-vermais-1" style="position: absolute; top: 6px; right: 8px;">
+                                <svg id="icon-vermais-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+
+                        </div>
+                        
+                        <!-- Descrição -->
+                        <div id="descricao-1" style="display: none;" class="portifolio-descricao">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </div>
+
+                        <!-- rodapé -->
+                        <div class="rodape-portifolio">
+                            <div style="position: relative;">
+                                <strong>Stacks: </strong> 
+                                <div class="radape-portifolio-stacks">
+                                    <span class="stack-php">PHP7</span>  
+                                    <span class="stack-mysql">MySQL</span>
+                                    <span class="stack-php">PHPMailer</span>
+                                    <span class="stack-composer">Composer</span>
+                                    <span class="stack-html">HTML5</span>
+                                    <span class="stack-sass">SASS</span>
+                                    <span class="stack-javascript">JavaScript</span>
+                                    <span class="stack-bootstrap">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--//Fim container portifólio -->
+
+
+
+
+
+                    <!-- container portifólio -->
+                    <div class="container-portifolio">
+
+                        <!-- Cabeçalho -->
+                        <div class="cabecalho-portifolio">
+                            <strong>Meu Portifólio</strong>
+                            
+                            <span class="cabecalho-link-portifolio">
+                                
+                                <a href="https://vbook.infinityfreeapp.com/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-link-45deg cabecalho-link-portifolio-icon" viewBox="0 0 16 16">
+                                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                                    </svg>
+                                
+                                    https://elsonnunes.infinityfreeapp.com/
+
+                                </a>
+
+                            </span>
+
+                        </div>
+
+                        <!-- Container imagem -->
+                        <div class="portifolio-img">
+                            <a href="https://vbook.infinityfreeapp.com/" target="_blank">
+                                <img id="img-projeto" width="100%" src="assets/imagens/img-portifolio.png" alt="Imagem do aplicativo vBook">
+                            </a>
+                        </div>
+
+                        <!-- Btn vermais -->
+                        <div onclick="btnVermais(2)" style="position: relative; height: 20px;" class="btn-mostrar-descricao">
+                            <div style="position: absolute; top: 6px; left: 8px;">
+                                Ver mais
+                            </div>
+                            <div id="container-icon-vermais-2" style="position: absolute; top: 6px; right: 8px;">
+                                <svg id="icon-vermais-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+
+                        </div>
+                        
+                        <!-- Descrição -->
+                        <div id="descricao-2" style="display: none;" class="portifolio-descricao">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </div>
+
+                        <!-- rodapé -->
+                        <div class="rodape-portifolio">
+                            <div>
+                                <strong>Stacks: </strong> 
+                                <div class="radape-portifolio-stacks-hidden">
+                                    <span class="stack-html">HTML5</span>  
+                                    <span class="stack-css">CSS3</span>
+                                    <span class="stack-javascript">JavaScript</span>
+                                    <span class="stack-emailsjs">EMailsJS</span>
+                                    <span class="stack-vazio">JavaScript</span>
+                                    <span class="stack-vazio">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--//Fim container portifólio -->                    
+
+                </div>
+                <!-- Grupo container portifólio -->
+
+            </div>
+
+        </section>
+
+        
+
+        <!-- Contado -->
+        <section id="contato">
+
+            <div style="margin-bottom: .4rem;">
+                <h2 class="titulo-1">Contato</h2>
+            </div>
+
+            <div>
+
+                <div style="display: flex; margin-bottom: .8rem; margin-left: .8rem;">
+                    <!-- Telefone -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                    <span style="margin-left: .2rem; margin-right: 1rem;">(43) 99143-5288</span>
+
+                    <!-- Whatsapp -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    <span style="margin-left: .2rem;">(43) 99143-5288</span>
+
+                </div>
+
+                <div style="margin-bottom: .8rem; margin-left: .8rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                        <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+                        <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+                    </svg>
+                    <span style="margin-left: .2rem;">elsonnunes07@gmail.com</span>
+                </div>
+
+            </div>
+
+            <!-- Formulário -->
+            <div>
+                
+                <fieldset id="fieldset" style="margin-top: 1.5rem; margin-left: .8rem; width: 50%;">
+                    
+                    <legend style="padding-left: .4rem; padding-right: .4rem;">Envie uma mensagem !</legend>
+                    
+                    <form style="margin-top: .1rem;" id="contact-form">
+                        
+                        <input onchange="validaSubmit()" onkeyup="validaSubmit()" class="inputs" type="text" name="user_name" id="nome" placeholder="Nome *" autocomplete="additional-name">
+                        <input onchange="validaSubmit()" onkeyup="validaSubmit()" class="inputs" type="email" name="user_email" id="email" placeholder="E-mail *" autocomplete="email">
+                        <input class="inputs" type="tel" name="tel" id="telefone" placeholder="Telefone" autocomplete="tel">
+                        <input class="inputs" type="text" name="subject" id="assunto" placeholder="Assunto">
+                        <textarea onchange="validaSubmit()" onkeyup="validaSubmit()" class="input-textarea" name="message" id="message" cols="30" rows="6" placeholder="Mensagem"></textarea>
+                        
+                        <div>
+                            <label style="user-select: none;" for="receber-contato">Desejo receber contato</label>
+                            <input type="checkbox" name="reply-to" id="receber-contato">
+                        </div>
+                        <button onclick="validaSubmit()" id="enviar" class="submit-mensagem-inactive" type="submit" disabled="disabled">Enviar</button>
+
+                    </form>
+
+                </fieldset>
+                
+            </div>
+            
+        </section>
+
+    </article>
+
+    <div id="mesage-feedback" style="position: fixed; top: 35%; width: 100%;"></div>
+    
+    <footer style="background-color: rgb(207, 207, 207); color: rgb(80, 80, 80); margin-top: 4rem; border-top: 1px solid rgb(131, 131, 131);">
+        @2024 Elson Nunes da Rosa, Todos os direitos reservados.
+    </footer>
+    
+    <script>
+        window.addEventListener('resize', this.updateResolution);
+        this.updateResolution();
+    </script>
+
+</body>
+</html>
