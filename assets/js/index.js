@@ -193,7 +193,8 @@ function breakPoints(largura){
         //Sobre, formação   
         for(let i = 0; i < arrayContainerCurso.length; i++){
             
-            arrayContainerCurso[i].style.width = '47%';
+            //arrayContainerCurso[i].style.width = '47%';
+            arrayContainerCurso[i].style.width = '49.75%';
             
             if(i < (parseInt(arrayContainerCurso.length)-1) ){
                 arrayContainerCurso[i].style.marginBottom = '.35rem';
@@ -231,7 +232,12 @@ function breakPoints(largura){
         //Sobre, formação  
         for(let i = 0; i < arrayContainerCurso.length; i++){
             
-            arrayContainerCurso[i].style.width = '47%';
+            if(largura >= 1451){
+                arrayContainerCurso[i].style.width = '49.8%';
+            }else{
+                arrayContainerCurso[i].style.width = '49.75%';
+            }
+            
             
             if(i < (parseInt(arrayContainerCurso.length)-1) ){
                 arrayContainerCurso[i].style.marginBottom = '.35rem';

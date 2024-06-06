@@ -29,7 +29,7 @@
         window.onload = function() {
 
            this.updateResolution();
-           
+
             //Constroi o container de aviso de evio de memssagem.
             this.contructFeedBeckSendEmail();
             
@@ -279,7 +279,7 @@
                 <div class="stacks" >
                     <h3 class="titulo-2">Front And</h3><!--<h4 class="titulo-3">Front And</h4>-->
                     <div>
-                        <span class="stack-javascript">JavaScript</span>
+                        <span  class="stack-javascript">JavaScript</span>
                         <span class="stack-html">HTML5</span>
                         <span class="stack-css">CSS3</span>
                         <span class="stack-sass">SASS</span>
@@ -522,6 +522,7 @@
                         <div class="cabecalho-portifolio">
                             <strong>vBook</strong>
                             
+                            <!--
                             <span class="cabecalho-link-portifolio">
                                 
                                 <a href="https://vbook.infinityfreeapp.com/" target="_blank">
@@ -535,20 +536,28 @@
                                 </a>
 
                             </span>
+                            -->
 
                         </div>
 
                         <!-- Container imagem -->
                         <div class="portifolio-img">
+
+                            <video controls width="100%">
+                                <source src="assets/video/vbook.mp4" type="video/mp4">
+                                Seu navegador não oferece suporte ao elemento de vídeo. Atualize-o para a versão mais recente.
+                            </video>
+                            <!--
                             <a href="https://vbook.infinityfreeapp.com/" target="_blank">
                                 <img width="100%" src="assets/imagens/vbook.png" alt="Imagem do aplicativo vBook">
                             </a>
+                            -->
                         </div>
 
                         <!-- Btn vermais -->
                         <div onclick="btnVermais(1)" style="position: relative; top: 0; height: 20px;" class="btn-mostrar-descricao">
                             <div style="position: absolute; top: 6px; left: 8px;">
-                                Ver mais
+                                <strong>Ver mais</strong>
                             </div>
                             <div id="container-icon-vermais-1" style="position: absolute; top: 6px; right: 8px;">
                                 <svg id="icon-vermais-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -605,6 +614,7 @@
                         <div class="cabecalho-portifolio">
                             <strong>Meu Portifólio</strong>
                             
+                            <!--
                             <span class="cabecalho-link-portifolio">
                                 
                                 <a href="https://vbook.infinityfreeapp.com/" target="_blank">
@@ -618,20 +628,29 @@
                                 </a>
 
                             </span>
+                            -->
 
                         </div>
 
                         <!-- Container imagem -->
                         <div class="portifolio-img">
+
+                            <video controls width="100%">
+                                <source src="assets/video/meuportifolio.mp4" type="video/mp4">
+                                Seu navegador não oferece suporte ao elemento de vídeo. Atualize-o para a versão mais recente.
+                            </video>
+                            <!--
                             <a href="https://vbook.infinityfreeapp.com/" target="_blank">
                                 <img id="img-projeto" width="100%" src="assets/imagens/img-portifolio.png" alt="Imagem do aplicativo vBook">
                             </a>
+                            -->
+
                         </div>
 
                         <!-- Btn vermais -->
                         <div onclick="btnVermais(2)" style="position: relative; height: 20px;" class="btn-mostrar-descricao">
                             <div style="position: absolute; top: 6px; left: 8px;">
-                                Ver mais
+                                <strong>Ver mais</strong>
                             </div>
                             <div id="container-icon-vermais-2" style="position: absolute; top: 6px; right: 8px;">
                                 <svg id="icon-vermais-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -750,6 +769,15 @@
     </article>
 
     <div id="mesage-feedback" style="position: fixed; top: 35%; width: 100%;"></div>
+    
+    <!--
+    <div id="video" style="position: fixed; top: 10%;  border: 1px solid red; margin: auto;">
+        <video controls width="50%">
+            <source src="assets/video/vbook.mp4" type="video/mp4">
+            Seu navegador não oferece suporte ao elemento de vídeo. Atualize-o para a versão mais recente.
+        </video>
+    </div>
+    -->
     
     <footer style="background-color: rgb(207, 207, 207); color: rgb(80, 80, 80); margin-top: 4rem; border-top: 1px solid rgb(131, 131, 131);">
         @2024 Elson Nunes da Rosa, Todos os direitos reservados.
