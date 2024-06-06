@@ -1,0 +1,2 @@
+assets/video/vbook.mp4 filter=lfs diff=lfs merge=lfs -text
+assets/video/meuportifolio.mp4 filter=lfs diff=lfs merge=lfs -text
