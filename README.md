@@ -1,0 +1,1 @@
+# Meu Portfólio Este projeto é de um site estático responsivo, no qual falo um pouco sobre mim e minhas habilidades como desenvolvedor de software.##Stacks * HTML 5 <img src="assets/imagens/html-5.png">* JavaScript* CSS3* EmailJS
