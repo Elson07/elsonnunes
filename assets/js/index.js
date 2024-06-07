@@ -87,7 +87,7 @@ function breakPoints(largura){
         //conatainer artigo
         btnMenu.style.display = '';
         nav.style.display = 'none';
-        nav.className = 'nav-verticao';
+        nav.className = 'nav-vertical';
 
         //Artigo de apresentação
         containerNav.className = 'nav-block' 
