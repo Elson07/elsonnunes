@@ -46,14 +46,21 @@ function breakPoints(largura){
 
     //Container portifólio
     let grupoContainerPortifolio = this.getId('grupo-container-portifolio');
-    grupoContainerPortifolio.style.display = 'flex';
-    
+    grupoContainerPortifolio.style.display = 'flex'; 
     let arrayContainerPortifolio = this.getClass('container-portifolio');
+    let arrayVideoYouTube = this.getClass('youtube'); 
     for(let i = 0; i < arrayContainerPortifolio.length; i++){
          
         arrayContainerPortifolio[i].style.width = '50%';
-         
+        arrayVideoYouTube[i].setAttribute('width', '100%');
+        arrayVideoYouTube[i].setAttribute('height', "400")
     } 
+    
+    
+    
+    //width="100%" height="400"
+
+
     
     //Formulário 
     let arrayInputFormulario = this.getClass('inputs');
@@ -91,12 +98,14 @@ function breakPoints(largura){
 
         //Container portifólio
         grupoContainerPortifolio.style.display = 'block';
-        let arrayContainerPortifolio = this.getClass('container-portifolio');
         for(let i = 0; i < arrayContainerPortifolio.length; i++){
             
             arrayContainerPortifolio[i].style.width = '96.4%'
-            
+            arrayVideoYouTube[i].setAttribute('width', '100%');
+            arrayVideoYouTube[i].setAttribute('height', "250");
+
         } 
+        
 
         //Formulário 
         for(let i = 0; i < arrayInputFormulario.length;  i++) {
@@ -129,12 +138,13 @@ function breakPoints(largura){
 
         //Container portifólio
         grupoContainerPortifolio.style.display = 'block';
-        let arrayContainerPortifolio = this.getClass('container-portifolio');
         for(let i = 0; i < arrayContainerPortifolio.length; i++){
             
             arrayContainerPortifolio[i].style.width = '97.2%'
+            arrayVideoYouTube[i].setAttribute('width', '100%');
+            arrayVideoYouTube[i].setAttribute('height', "350");
             
-        } 
+        }
 
         //Formulário 
         for(let i = 0; i < arrayInputFormulario.length;  i++) {
@@ -158,14 +168,13 @@ function breakPoints(largura){
 
         //Container portifólio
         grupoContainerPortifolio.style.display = 'block';
-        let arrayContainerPortifolio = this.getClass('container-portifolio');
         for(let i = 0; i < arrayContainerPortifolio.length; i++){
             
             arrayContainerPortifolio[i].style.width = '98%';
-            
-        } 
+            arrayVideoYouTube[i].setAttribute('width', '100%');
+            arrayVideoYouTube[i].setAttribute('height', "450");
 
-        //Formulario 
+        }
         
 
     //lg
@@ -173,15 +182,20 @@ function breakPoints(largura){
         //Tamanho tela
         console.log(`Formato: lg | Largura: ${largura}`)
 
+        //Container portifólio
+        for(let i = 0; i < arrayVideoYouTube.length; i++){
+            
+            arrayVideoYouTube[i].setAttribute('width', '100%');
+            arrayVideoYouTube[i].setAttribute('height', "280");
+
+        }
+
         //Formulario 
         for(let i = 0; i < arrayInputFormulario.length;  i++) {
 
             arrayInputFormulario[i].style.width = '45.6%';
 
         }
-
-        
-
     
     //xl
     }else if(largura <= 1399){
@@ -189,6 +203,14 @@ function breakPoints(largura){
         console.log(`Formato: xl | Largura: ${largura}`)
         
         article.style.width = '90%';
+
+        //Container portifólio
+        for(let i = 0; i < arrayVideoYouTube.length; i++){
+            
+            arrayVideoYouTube[i].setAttribute('width', '100%');
+            arrayVideoYouTube[i].setAttribute('height', "300");
+
+        }
 
         //Sobre, formação   
         for(let i = 0; i < arrayContainerCurso.length; i++){
@@ -214,9 +236,7 @@ function breakPoints(largura){
         }else if(largura >= 1199){
 
             for(let i = 0; i < arrayInputFormulario.length;  i++) {
-
                 arrayInputFormulario[i].style.width = '46%';
-
             }
 
         }
