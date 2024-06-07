@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!--
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    -->
+    Tive um problema com a view porte, esta loga abaixo resolveu o problema com relação ao retorno da resolução da tela, na qual retorna a resolução correta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Developer Full Stack</title>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -526,20 +526,294 @@
 
                         </div>
                         
+                        <style>
+                            .casos-uso{
+                                margin: 10px; 
+                                border: 1px solid rgb(0, 0, 0); 
+                                padding: 8px;
+                            }
+
+                            .casos-uso-none{
+                                padding: 8px; 
+                            }    
+                            .casos-uso-red{
+                                border-left: 3px solid rgb(255, 0, 0);
+                                border-right: 1px solid rgba(255, 0, 0, 0.205);
+                                border-top: 1px solid rgba(255, 0, 0, 0.205);
+                                border-bottom: 1px solid rgba(255, 0, 0, 0.205);
+                                padding: 8px; 
+                                margin-top: 10px;
+                                color: rgb(136, 0, 0);
+                                background-color: rgb(255, 241, 241);
+
+                            }
+
+                            .casos-uso-blue{
+                                border-left: 3px solid blue;
+                                border-right: 1px solid rgba(0, 0, 255, 0.137);
+                                border-top: 1px solid rgba(0, 0, 255, 0.137);
+                                border-bottom: 1px solid rgba(0, 0, 255, 0.137);
+                                padding: 8px; 
+                                margin-top: 10px;
+                                color: rgb(0, 0, 102);
+                                background-color: rgb(236, 236, 255);
+                            } 
+
+                            .casos-uso-green{
+                                border-left: 3px solid green;
+                                border-right: 1px solid rgba(0, 128, 0, 0.178);
+                                border-top: 1px solid rgba(0, 128, 0, 0.178);
+                                border-bottom: 1px solid rgba(0, 128, 0, 0.178);
+                                padding: 8px; 
+                                margin-top: 10px;
+                                color: rgb(0, 95, 0);
+                                background-color: rgb(234, 255, 234);
+                            } 
+
+                            .casos-uso-purple{
+                                border-left: 3px solid purple;
+                                border-right: 1px solid rgba(128, 0, 128, 0.178);
+                                border-top: 1px solid rgba(128, 0, 128, 0.178);
+                                border-bottom: 1px solid rgba(128, 0, 128, 0.178);
+                                padding: 8px; 
+                                margin-top: 10px;
+                                color: rgb(95, 0, 95);
+                                background-color: rgb(255, 236, 255);
+                            }
+
+                            .casos-uso-orange{
+                                border-left: 3px solid rgb(156, 102, 0);
+                                border-right: 1px solid rgba(156, 101, 0, 0.274);
+                                border-top: 1px solid rgba(156, 101, 0, 0.274);
+                                border-bottom: 1px solid rgba(156, 101, 0, 0.274);
+                                padding: 8px;
+                                margin-top: 10px;
+                                color: rgb(116, 75, 0);
+                                background-color: rgb(255, 247, 231);
+                            }
+
+                        </style>
+
                         <!-- Descrição -->
                         <div id="descricao-1" style="display: none;" class="portifolio-descricao">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                            the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            
+                            <p>
+                                Link de acesso <a href="https://vbook.infinityfreeapp.com">https://vbook.infinityfreeapp.com</a>
+                            </p>
+                            
+                            <p><strong>Nome do projeto</strong>: vBook</p> 
+                            <p><strong>Tipo de aplicação</strong>: Biblioteca virtual</p> 
+
+                            <div class="casos-uso">
+                                
+                               <strong style="margin-bottom: 6px; display: block;">Casos de uso</strong>
+
+                                <!-- Caso não esteja cadastrado -->
+                                <div class="casos-uso-red">
+                                    
+                                    Caso o usuário não esteja cadastrado
+
+                                    <div class="casos-uso-green">
+                                        Se cadastrar
+                                        <div class="casos-uso-blue">
+                                            É necessário preencher todos os campos obrigatórios (Apelido, Nome completo, E-mail, Celular com DDD, Senha e Confirmar senha). 
+                                            Após submeter os dados, o usuário deve fornecer o código que é enviado para o e-mail cadastrado para confirmar o cadastro.
+                                        </div>
+
+                                    </div>
+
+                                    <div class="casos-uso-green">
+                                        Visualizar
+                                        <div class="casos-uso-blue">
+                                            Pesquisar
+                                            <div class="casos-uso-purple">
+                                                É possível pesquisar qualquer livro público pela barra de pesquisa, seja pelo título, gênero ou autor.
+                                            </div>
+                                        </div>
+                                        <div class="casos-uso-blue">
+                                            Listar
+                                            <div class="casos-uso-purple">
+                                                É possível listar os livros públicos (Novos (nos últimos 15 dias), Mais lidos (média), Mais avaliados (média)).
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--\\Fim Caso não esteja cadastrado -->
+
+                                <!-- Caso esteja cadastrado -->
+                                <div class="casos-uso-red">
+
+                                    Caso o usuário esteja cadastrado
+
+                                    <div class="casos-uso-green">
+                                        
+                                        Logar no sistema 
+
+                                        <div class="casos-uso-blue">
+
+                                            Alterar os dados da conta
+
+                                            <div class="casos-uso-purple">
+
+                                                O usuário pode alterar qualquer atributo (nome, usuário, e-mail, telefone, senha, foto de usuário).
+                                                
+                                                <div class="casos-uso-orange">
+
+                                                    Para qualquer atributo alterado, o sistema solicitará a senha de confirmação. Após a confirmação, o usuário deve fazer login 
+                                                    novamente para visualizar as alterações.
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="casos-uso-blue">
+
+                                            Visualizar
+
+                                            <div class="casos-uso-purple">
+
+                                                Pesquisar
+
+                                                <div class="casos-uso-orange">
+                                                    É possível pesquisar os livros de acordo com o seu perfil (seus livros privados, seus livros listados, os livros nos quais está 
+                                                    listado e os públicos) pela barra de pesquisa, seja pelo título, gênero ou autor.
+                                                </div>
+
+                                            </div>
+
+                                            <div class="casos-uso-purple">
+                                                
+                                                Listar 
+
+                                                <div class="casos-uso-orange">
+                                                    É possível listar os livros de acordo com o seu perfil (seus livros privados, seus livros listados, os livros nos quais está listado e os 
+                                                    públicos) e ordená-los por novos (nos últimos 15 dias), mais lidos (média), mais avaliados (média) e gênero.
+                                                </div>
+
+                                            </div>
+
+                                            <div class="casos-uso-purple">
+                                                
+                                                Público 
+
+                                                <div class="casos-uso-orange">
+                                                    Todos
+                                                </div>
+
+                                            </div>
+
+                                            <div class="casos-uso-purple">
+                                                
+                                                Privado  
+
+                                                <div class="casos-uso-orange">
+                                                    Somente os que o usuário titular publicou podem ser visualizados. 
+                                                </div>
+
+                                            </div>
+
+                                            <div class="casos-uso-purple">
+                                                
+                                                Listado   
+
+                                                <div class="casos-uso-orange">
+                                                    Somente o titular e os listados podem visualizar. 
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="casos-uso-blue">
+
+                                            Publicar
+
+                                            <div class="casos-uso-purple">
+
+                                                O livro deve ter todos os campos preenchidos
+                                            
+                                                <div class="casos-uso-orange">
+                                                    O título deve ser distinto.
+                                                </div>
+
+                                                <div class="casos-uso-orange">
+                                                    O Autor pode ser o usuário logado ou um pseudônimo.
+                                                </div>
+
+                                                <div class="casos-uso-orange">
+                                                    O Autor pode ser o usuário logado ou um pseudônimo.
+                                                </div>
+
+                                                <div class="casos-uso-orange">
+                                                    O gênero pode ser um listado nas opções, ou um novo adicionado manualmente.
+                                                </div>
+
+                                                <div class="casos-uso-orange">
+                                                    A descrição não pode passar de 800 caracteres.
+                                                </div>
+
+                                                <div class="casos-uso-orange">
+                                                    Na opção de visibilidade, o usuário pode escolher entre Público, Listado ou Privado. No caso de escolher Listado, basta 
+                                                    inserir o nome de usuário ou e-mail, desde que estejam cadastrados na plataforma.
+                                                </div>
+
+                                                <div class="casos-uso-orange">
+                                                    Na função de importar arquivos, o usuário só pode importar imagens nos formatos PNG, JPG e JPEG. 
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="casos-uso-blue">
+
+                                            Editar
+                                            
+                                            <div class="casos-uso-purple">
+
+                                                O usuário pode editar somente os livros dos quais é o titular (quem publicou), podendo alterar qualquer atributo (título, autor, 
+                                                gênero, descrição, visibilidade, remover ou adicionar páginas).
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="casos-uso-blue">
+
+                                            Deletar
+                                            
+                                            <div class="casos-uso-purple">
+
+                                                O usuário pode remover somente os livros dos quais é o titular (quem publicou), podendo remover de 1 a N livros.
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="casos-uso-green">
+
+                                        Recuperar senha
+
+                                        <div class="casos-uso-blue">
+
+                                            Qualquer usuário cadastrado pode recuperar a senha, criando uma nova. Para isso, é necessário fornecer o nome de usuário, telefone ou 
+                                            e-mail, e posteriormente informar o código de segurança que é enviado por e-mail para a alteração de senha.
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
 
                         <!-- rodapé -->
