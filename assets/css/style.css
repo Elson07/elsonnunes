@@ -388,6 +388,72 @@ ul li a:hover{
    border-right: 1px solid black;
 }
 
+.casos-uso{
+    margin: 10px; 
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 8px;
+}
+
+.casos-uso-none{
+    padding: 8px; 
+}    
+
+.casos-uso-red{
+    border-left: 3px solid rgb(255, 0, 0);
+    border-right: 1px solid rgba(255, 0, 0, 0.205);
+    border-top: 1px solid rgba(255, 0, 0, 0.205);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.205);
+    padding: 8px; 
+    margin-top: 10px;
+    color: rgb(136, 0, 0);
+    background-color: rgb(255, 241, 241);
+
+}
+
+.casos-uso-blue{
+    border-left: 3px solid blue;
+    border-right: 1px solid rgba(0, 0, 255, 0.137);
+    border-top: 1px solid rgba(0, 0, 255, 0.137);
+    border-bottom: 1px solid rgba(0, 0, 255, 0.137);
+    padding: 8px; 
+    margin-top: 10px;
+    color: rgb(0, 0, 102);
+    background-color: rgb(236, 236, 255);
+} 
+
+.casos-uso-green{
+    border-left: 3px solid green;
+    border-right: 1px solid rgba(0, 128, 0, 0.178);
+    border-top: 1px solid rgba(0, 128, 0, 0.178);
+    border-bottom: 1px solid rgba(0, 128, 0, 0.178);
+    padding: 8px; 
+    margin-top: 10px;
+    color: rgb(0, 95, 0);
+    background-color: rgb(234, 255, 234);
+} 
+
+.casos-uso-purple{
+    border-left: 3px solid purple;
+    border-right: 1px solid rgba(128, 0, 128, 0.178);
+    border-top: 1px solid rgba(128, 0, 128, 0.178);
+    border-bottom: 1px solid rgba(128, 0, 128, 0.178);
+    padding: 8px; 
+    margin-top: 10px;
+    color: rgb(95, 0, 95);
+    background-color: rgb(255, 236, 255);
+}
+
+.casos-uso-orange{
+    border-left: 3px solid rgb(156, 102, 0);
+    border-right: 1px solid rgba(156, 101, 0, 0.274);
+    border-top: 1px solid rgba(156, 101, 0, 0.274);
+    border-bottom: 1px solid rgba(156, 101, 0, 0.274);
+    padding: 8px;
+    margin-top: 10px;
+    color: rgb(116, 75, 0);
+    background-color: rgb(255, 247, 231);
+}
+
 .rodape-portifolio{
     border: 1px solid black; 
     height: 50px;
