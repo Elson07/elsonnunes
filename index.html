@@ -29,8 +29,6 @@
     <script type="text/javascript">
 
         window.onload = function() {
-            
-           //this.updateResolution();
 
             //Constroi o container de aviso de evio de memssagem.
             this.contructFeedBeckSendEmail();
@@ -38,7 +36,7 @@
             document.getElementById('contact-form').addEventListener('submit', function(event) {
 
                 // Atribuir animação de subminção de dados 
-                document.getElementById('enviar').innerHTML = '<img width="16px" src="assets/imagens/loading.gif" alt="loading">';
+                document.getElementById('enviar').innerHTML = '<img width="16px" src="assets/gifs/loading.gif" alt="loading">';
 
                 event.preventDefault();
                 // Submetemos nosso formulário de contato e o enviamos através do EmailJS, usando nosso Serviço de Contato e Formulário de Contato :
@@ -529,219 +527,347 @@
                         <!-- Descrição -->
                         <div id="descricao-1" style="display: none;" class="portifolio-descricao">
                             
-                            <p>
-                                Link projeto <a href="https://vbook.infinityfreeapp.com">https://vbook.infinityfreeapp.com</a>
+                            <p> 
+                                <a style="text-decoration: none;" href="https://vbook.infinityfreeapp.com" target="_blank">
+                                    <span style="color: black;">
+                                        <img style="position: relative; top: 6px;" src="assets/icon/link.svg" alt="label do projeto"> 
+                                        Link do projeto:
+                                    </span> 
+                                    <span style="text-decoration: underline;">
+                                        https://vbook.infinityfreeapp.com
+                                    </span>
+                                </a>
                             </p>
                             
                             <p><strong>Nome do projeto</strong>: vBook</p> 
                             <p><strong>Tipo de aplicação</strong>: Biblioteca virtual</p> 
+                            
+                            <p><strong>Especificações tecnicas</strong></p> 
 
-                            <div class="casos-uso">
-                                
-                               <strong style="margin-bottom: 6px; display: block;">Casos de uso e regras de negócios</strong>
 
-                                <!-- Caso não esteja cadastrado -->
-                                <div class="casos-uso-red">
+                            <div class="projeto-descricao">
+
+                                <div onclick="btnDescricaoProjeto(0)" class="btn-projeto-descricao"> 
                                     
-                                    Caso o usuário não esteja cadastrado
+                                    <strong style="display: inline-block;">Especificações técnicas</strong>
 
-                                    <div class="casos-uso-green">
-                                        Se cadastrar
-                                        <div class="casos-uso-blue">
-                                            É necessário preencher todos os campos obrigatórios (Apelido, Nome completo, E-mail, Celular com DDD, Senha e Confirmar senha). 
-                                            Após submeter os dados, o usuário deve fornecer o código que é enviado para o e-mail cadastrado para confirmar o cadastro.
-                                        </div>
-
+                                    <div class="container-projeto-descricao-icon" id="container-projeto-descricao-icon-0">
+                                        <svg id="bi-chevron-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                        </svg>
                                     </div>
 
-                                    <div class="casos-uso-green">
-                                        Visualizar
-                                        <div class="casos-uso-blue">
-                                            Pesquisar
-                                            <div class="casos-uso-purple">
-                                                É possível pesquisar qualquer livro público pela barra de pesquisa, seja pelo título, gênero ou autor.
+                                </div>
+
+                                <div id="container-descricao-0" style="display: none;">
+
+                                    <div class="descricao-0">
+                                        Arquitetura
+                                        <div class="descricao-1">
+                                            MVC (Model, View e Controller) 
+                                            <div class="descricao-2">
+                                                Model
+                                                <div class="descricao-3">
+                                                    Camada onde agrupa as regras de negócios (consultas complexas e tratativas de dados).
+                                                </div>
+                                            </div>
+                                            <div class="descricao-2">
+                                                View 
+                                                <div class="descricao-3">
+                                                    Camada onde são agrupadas as visualizações (documentos HTML).
+                                                </div>
+                                            </div>
+                                            <div class="descricao-2">
+                                                Controller  
+                                                <div class="descricao-3">
+                                                    Camada responsável pela gestão do Model e da View, com base na ação executada pelo usuário.
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="casos-uso-blue">
-                                            Listar
-                                            <div class="casos-uso-purple">
-                                                É possível listar os livros públicos (Novos (nos últimos 15 dias), Mais lidos (média), Mais avaliados (média)).
+                                    </div>
+
+                                    <div class="descricao-0">
+                                        Back End
+                                        <div class="descricao-1">
+                                            PHP 7  
+                                            <div class="descricao-2">
+                                                linguagem de programação que roda no lado do servidor web, dentro de um ambiente apache.
+                                            </div>
+                                        </div>
+                                        <div class="descricao-1">
+                                            Mysql  
+                                            <div class="descricao-2">
+                                                Sistema de gerenciamento de banco de dados relacional.
+                                            </div>
+                                        </div>
+                                        <div class="descricao-1">
+                                            PHPMailer 
+                                            <div class="descricao-2">
+                                                Biblioteca SMTP, para envio e recebimento de e-mails.
+                                            </div>
+                                        </div>
+                                        <div class="descricao-1">
+                                            Composer 
+                                            <div class="descricao-2">
+                                                Gerenciador de dependências do PHP.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="descricao-0">
+                                        Front End 
+                                        <div class="descricao-1">
+                                            HTML5 
+                                            <div class="descricao-2">
+                                                Linguagem de marcação, “esqueleto do conteúdo web”.
+                                            </div>
+                                        </div>
+                                        <div class="descricao-1">
+                                            SASS   
+                                            <div class="descricao-2">
+                                                Pré-processador de CSS que adiciona funcionalidades como variáveis, aninhamento, mixins e herança para facilitar a 
+                                                estilização dos elementos HTML em páginas da web.
+                                            </div>
+                                        </div>
+                                        <div class="descricao-1">
+                                            Bootstrap  
+                                            <div class="descricao-2">
+                                                Framework front-end, utilizado para tornar o aplicativo responsivo.
+                                            </div>
+                                        </div>
+                                        <div class="descricao-1">
+                                            JavaScript  
+                                            <div class="descricao-2">
+                                                Linguagem de programação, utilizada para interatividade da aplicação. 
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
-                                <!--\\Fim Caso não esteja cadastrado -->
 
-                                <!-- Caso esteja cadastrado -->
-                                <div class="casos-uso-red">
+                            </div>
 
-                                    Caso o usuário esteja cadastrado
 
-                                    <div class="casos-uso-green">
+                            <div class="projeto-descricao">
+
+                               <div onclick="btnDescricaoProjeto(1)" class="btn-projeto-descricao"> 
+                                    
+                                    <strong style="display: inline-block;">Casos de uso e regras de negócios</strong>
+
+                                    <div class="container-projeto-descricao-icon" id="container-projeto-descricao-icon-1">
+                                        <svg id="bi-chevron-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                        </svg>
+                                    </div>
+
+                                </div>
+
+                                <div id="container-descricao-1" style="display: none;">
+
+                                    <!-- Caso não esteja cadastrado -->
+                                    <div class="descricao-0">
                                         
-                                        Logar no sistema 
+                                        Caso o usuário não esteja cadastrado
 
-                                        <div class="casos-uso-blue">
-
-                                            Alterar os dados da conta
-
-                                            <div class="casos-uso-purple">
-
-                                                O usuário pode alterar qualquer atributo (nome, usuário, e-mail, telefone, senha, foto de usuário).
-                                                
-                                                <div class="casos-uso-orange">
-
-                                                    Para qualquer atributo alterado, o sistema solicitará a senha de confirmação. Após a confirmação, o usuário deve fazer login 
-                                                    novamente para visualizar as alterações.
-
-                                                </div>
-
+                                        <div class="descricao-1">
+                                            Se cadastrar
+                                            <div class="descricao-2">
+                                                É necessário preencher todos os campos obrigatórios (Apelido, Nome completo, E-mail, Celular com DDD, Senha e Confirmar senha). 
+                                                Após submeter os dados, o usuário deve fornecer o código que é enviado para o e-mail cadastrado para confirmar o cadastro.
                                             </div>
 
                                         </div>
 
-                                        <div class="casos-uso-blue">
-
+                                        <div class="descricao-1">
                                             Visualizar
-
-                                            <div class="casos-uso-purple">
-
+                                            <div class="descricao-2">
                                                 Pesquisar
+                                                <div class="descricao-3">
+                                                    É possível pesquisar qualquer livro público pela barra de pesquisa, seja pelo título, gênero ou autor.
+                                                </div>
+                                            </div>
+                                            <div class="descricao-2">
+                                                Listar
+                                                <div class="descricao-3">
+                                                    É possível listar os livros públicos (Novos (nos últimos 15 dias), Mais lidos (média), Mais avaliados (média)).
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                                <div class="casos-uso-orange">
-                                                    É possível pesquisar os livros de acordo com o seu perfil (seus livros privados, seus livros listados, os livros nos quais está 
-                                                    listado e os públicos) pela barra de pesquisa, seja pelo título, gênero ou autor.
+                                    </div>
+                                    <!--\\Fim Caso não esteja cadastrado -->
+
+                                    <!-- Caso esteja cadastrado -->
+                                    <div class="descricao-0">
+
+                                        Caso o usuário esteja cadastrado
+
+                                        <div class="descricao-1">
+                                            
+                                            Logar no sistema 
+
+                                            <div class="descricao-2">
+
+                                                Alterar os dados da conta
+
+                                                <div class="descricao-3">
+
+                                                    O usuário pode alterar qualquer atributo (nome, usuário, e-mail, telefone, senha, foto de usuário).
+                                                    
+                                                    <div class="descricao-4">
+
+                                                        Para qualquer atributo alterado, o sistema solicitará a senha de confirmação. Após a confirmação, o usuário deve fazer login 
+                                                        novamente para visualizar as alterações.
+
+                                                    </div>
+
                                                 </div>
 
                                             </div>
 
-                                            <div class="casos-uso-purple">
-                                                
-                                                Listar 
+                                            <div class="descricao-2">
 
-                                                <div class="casos-uso-orange">
-                                                    É possível listar os livros de acordo com o seu perfil (seus livros privados, seus livros listados, os livros nos quais está listado e os 
-                                                    públicos) e ordená-los por novos (nos últimos 15 dias), mais lidos (média), mais avaliados (média) e gênero.
+                                                Visualizar
+
+                                                <div class="descricao-3">
+
+                                                    Pesquisar
+
+                                                    <div class="descricao-4">
+                                                        É possível pesquisar os livros de acordo com o seu perfil (seus livros privados, seus livros listados, os livros nos quais está 
+                                                        listado e os públicos) pela barra de pesquisa, seja pelo título, gênero ou autor.
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="descricao-3">
+                                                    
+                                                    Listar 
+
+                                                    <div class="descricao-4">
+                                                        É possível listar os livros de acordo com o seu perfil (seus livros privados, seus livros listados, os livros nos quais está listado e os 
+                                                        públicos) e ordená-los por novos (nos últimos 15 dias), mais lidos (média), mais avaliados (média) e gênero.
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="descricao-3">
+                                                    
+                                                    Público 
+
+                                                    <div class="descricao-4">
+                                                        Todos
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="descricao-3">
+                                                    
+                                                    Privado  
+
+                                                    <div class="descricao-4">
+                                                        Somente os que o usuário titular publicou podem ser visualizados. 
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="descricao-3">
+                                                    
+                                                    Listado   
+
+                                                    <div class="descricao-4">
+                                                        Somente o titular e os listados podem visualizar. 
+                                                    </div>
+
                                                 </div>
 
                                             </div>
 
-                                            <div class="casos-uso-purple">
-                                                
-                                                Público 
+                                            <div class="descricao-2">
 
-                                                <div class="casos-uso-orange">
-                                                    Todos
+                                                Publicar
+
+                                                <div class="descricao-3">
+
+                                                    O livro deve ter todos os campos preenchidos
+                                                
+                                                    <div class="descricao-4">
+                                                        O título deve ser distinto.
+                                                    </div>
+
+                                                    <div class="descricao-4">
+                                                        O Autor pode ser o usuário logado ou um pseudônimo.
+                                                    </div>
+
+                                                    <div class="descricao-4">
+                                                        O Autor pode ser o usuário logado ou um pseudônimo.
+                                                    </div>
+
+                                                    <div class="descricao-4">
+                                                        O gênero pode ser um listado nas opções, ou um novo adicionado manualmente.
+                                                    </div>
+
+                                                    <div class="descricao-4">
+                                                        A descrição não pode passar de 800 caracteres.
+                                                    </div>
+
+                                                    <div class="descricao-4">
+                                                        Na opção de visibilidade, o usuário pode escolher entre Público, Listado ou Privado. No caso de escolher Listado, basta 
+                                                        inserir o nome de usuário ou e-mail, desde que estejam cadastrados na plataforma.
+                                                    </div>
+
+                                                    <div class="descricao-4">
+                                                        Na função de importar arquivos, o usuário só pode importar imagens nos formatos PNG, JPG e JPEG. 
+                                                    </div>
+
                                                 </div>
 
                                             </div>
 
-                                            <div class="casos-uso-purple">
-                                                
-                                                Privado  
 
-                                                <div class="casos-uso-orange">
-                                                    Somente os que o usuário titular publicou podem ser visualizados. 
+                                            <div class="descricao-2">
+
+                                                Editar
+                                                
+                                                <div class="descricao-3">
+
+                                                    O usuário pode editar somente os livros dos quais é o titular (quem publicou), podendo alterar qualquer atributo (título, autor, 
+                                                    gênero, descrição, visibilidade, remover ou adicionar páginas).
+
                                                 </div>
 
                                             </div>
 
-                                            <div class="casos-uso-purple">
-                                                
-                                                Listado   
+                                            <div class="descricao-2">
 
-                                                <div class="casos-uso-orange">
-                                                    Somente o titular e os listados podem visualizar. 
+                                                Deletar
+                                                
+                                                <div class="descricao-3">
+
+                                                    O usuário pode remover somente os livros dos quais é o titular (quem publicou), podendo remover de 1 a N livros.
+
+
                                                 </div>
 
                                             </div>
 
                                         </div>
 
-                                        <div class="casos-uso-blue">
+                                        <div class="descricao-1">
 
-                                            Publicar
+                                            Recuperar senha
 
-                                            <div class="casos-uso-purple">
+                                            <div class="descricao-2">
 
-                                                O livro deve ter todos os campos preenchidos
-                                            
-                                                <div class="casos-uso-orange">
-                                                    O título deve ser distinto.
-                                                </div>
-
-                                                <div class="casos-uso-orange">
-                                                    O Autor pode ser o usuário logado ou um pseudônimo.
-                                                </div>
-
-                                                <div class="casos-uso-orange">
-                                                    O Autor pode ser o usuário logado ou um pseudônimo.
-                                                </div>
-
-                                                <div class="casos-uso-orange">
-                                                    O gênero pode ser um listado nas opções, ou um novo adicionado manualmente.
-                                                </div>
-
-                                                <div class="casos-uso-orange">
-                                                    A descrição não pode passar de 800 caracteres.
-                                                </div>
-
-                                                <div class="casos-uso-orange">
-                                                    Na opção de visibilidade, o usuário pode escolher entre Público, Listado ou Privado. No caso de escolher Listado, basta 
-                                                    inserir o nome de usuário ou e-mail, desde que estejam cadastrados na plataforma.
-                                                </div>
-
-                                                <div class="casos-uso-orange">
-                                                    Na função de importar arquivos, o usuário só pode importar imagens nos formatos PNG, JPG e JPEG. 
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="casos-uso-blue">
-
-                                            Editar
-                                            
-                                            <div class="casos-uso-purple">
-
-                                                O usuário pode editar somente os livros dos quais é o titular (quem publicou), podendo alterar qualquer atributo (título, autor, 
-                                                gênero, descrição, visibilidade, remover ou adicionar páginas).
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="casos-uso-blue">
-
-                                            Deletar
-                                            
-                                            <div class="casos-uso-purple">
-
-                                                O usuário pode remover somente os livros dos quais é o titular (quem publicou), podendo remover de 1 a N livros.
-
+                                                Qualquer usuário cadastrado pode recuperar a senha, criando uma nova. Para isso, é necessário fornecer o nome de usuário, telefone ou 
+                                                e-mail, e posteriormente informar o código de segurança que é enviado por e-mail para a alteração de senha.
 
                                             </div>
 
                                         </div>
 
                                     </div>
-
-                                    <div class="casos-uso-green">
-
-                                        Recuperar senha
-
-                                        <div class="casos-uso-blue">
-
-                                            Qualquer usuário cadastrado pode recuperar a senha, criando uma nova. Para isso, é necessário fornecer o nome de usuário, telefone ou 
-                                            e-mail, e posteriormente informar o código de segurança que é enviado por e-mail para a alteração de senha.
-
-                                        </div>
-
-                                    </div>
-
+                                
                                 </div>
 
                             </div>
