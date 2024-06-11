@@ -495,26 +495,6 @@ function validaSubmit(){
 
 }
 
-/*
-const projeto = {
-    link: 'https://vbook.infinityfreeapp.com',
-    nome: 'vBook',
-    tipo: 'Biblioteca virtual',
-    descricao: {
-        'Epecificações técnicas' : {
-            'Arquitetura': {
-                'MVC (Model, View e Controller)': {
-                    'Model': 'Camada onde agrupa as regras de negócios (consultas complexas e tratativas de dados).',
-                    'View': 'Camada onde são agrupadas as visualizações (documentos HTML).',
-                    'Controller': 'Camada responsável pela gestão do Model e da View, com base na ação executada pelo usuário.'
-                }
-            }
-        }
-    }
-}
-*/
-
-
 function btnDescricaoProjeto(i, j){
                         
 
