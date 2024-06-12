@@ -84,7 +84,18 @@ const projetos = [
         nome: 'Developer Full Stack',
         tipo: 'Portifólio',
         descricao: [
-    
+            {
+                'Especificações técnicas' : {
+                    'Back End': {
+                        'EMailsJS': 'Biblioteca SMTP, para envio e recebimento de e-mails.',
+                    },
+                    'Front End': {
+                        'HTML5': 'Linguagem de marcação, “esqueleto do conteúdo web”.',
+                        'CSS3': 'Folhas de estilos para HTML',
+                        'JavaScript': 'Linguagem de programação, utilizada para interatividade da aplicação.'
+                    }
+                } 
+            }
         ],
         stacks: {
             'HTML5': 'stack-html',
