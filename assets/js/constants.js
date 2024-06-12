@@ -1,6 +1,7 @@
 const projetos = [
     {
         link: 'https://vbook.infinityfreeapp.com',
+        video: 'https://www.youtube.com/embed/cfIal_cjC3w',
         nome: 'vBook',
         tipo: 'Biblioteca virtual',
         descricao: [
@@ -77,112 +78,21 @@ const projetos = [
         }
 
     },
-]
-
-function constructProjetos(){
-    //console.log(projetos)
-    for(let i = 0; i < projetos.length; i++){
-        
-        //console.log(projetos[i]);
-        console.log(`Link: ${projetos[i].link}`);
-        console.log(`Nome: ${projetos[i].nome}`);
-        console.log(`Tipo: ${projetos[i].tipo}`);
-
-        
-        for(let j = 0; j < projetos[i].descricao.length; j++){
-
-            //Descrição
-            for(let [chaveN0, valorN0] of Object.entries(projetos[i].descricao[j])){
-
-                //Container nivel 0
-                console.log('------------------------------------------------')
-                console.log('Container nivel 0')
-                console.log(`Chave0: ${chaveN0}`);
-                
-                if(typeof valorN0 === 'string'){
-
-                    console.log(`Valor0: ${valorN0}`);
-
-                }else if(typeof valorN0 === 'object'){
-
-                    for(let [chaveN1, valorN1] of Object.entries(valorN0)){
-
-                        //Container nivel 1
-                        console.log('------------------------------------------------')
-                        console.log('Container nivel 1')
-                        console.log(`Chave1: ${chaveN1}`)
-
-                        if(typeof valorN1 === 'string'){
-                            
-                            console.log(`Valor0: ${valorN1}`);
-
-                        }else if(typeof valorN1 === 'object'){
-
-                            
-                            for(let [chaveN2, valorN2] of Object.entries(valorN1)){
-                            
-                                //Container nivel 2
-                                console.log('------------------------------------------------')
-                                console.log('Container nivel 2')
-                                console.log(`Chave2: ${chaveN2}`)
-
-                                if(typeof valorN2 === 'string'){
-                                
-                                    console.log(`Valor2: ${valorN2}`)
-                                
-                                }else if(typeof valorN2 === 'object'){
-
-                                    for(let [chaveN3, valorN3] of Object.entries(valorN2)){
-
-                                        //Container nivel 3
-                                        console.log('------------------------------------------------')
-                                        console.log('Container nivel 3');
-                                        console.log(`Chave3: ${chaveN3}`);
-
-                                        if(typeof valorN3 === 'string'){
-                                
-                                            console.log(`Valor3: ${valorN3}`);
-                                        
-                                        }else if(typeof valorN3 === 'object'){
-
-                                            for(let [chaveN4, valorN4] of Object.entries(valorN3)){
-
-                                                //Container nivel 3
-                                                console.log('------------------------------------------------')
-                                                console.log('Container nivel 4');
-                                                console.log(`Chave4: ${chaveN4}`);
-
-                                                if(typeof valorN4 === 'string'){
-                                
-                                                    console.log(`Valor4: ${valorN4}`);
-                                                
-                                                }
-                                            
-                                            }
-
-                                        }
-            
-                                    }
-                                }
-                            }
-                        
-                        }
-
-                    }
-
-                }
-                
-            }
-
+    {
+        link: 'https://elson07.github.io/elsonnunes/',
+        video: 'https://www.youtube.com/embed/MPtZXEIVUfA',
+        nome: 'Developer Full Stack',
+        tipo: 'Portifólio',
+        descricao: [
+    
+        ],
+        stacks: {
+            'HTML5': 'stack-html',
+            'CSS3': 'stack-css',
+            'JavaScript': 'stack-javascript',
+            'EMailsJS': 'stack-emailsjs'
         }
-
-        for(let [chave, valor] of Object.entries( projetos[i].stacks)){
-            
-            console.log(`Chave: ${chave} | Valor: ${valor}`)
-
-        }
-        
 
     }
-    
-}
+];
+

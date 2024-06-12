@@ -526,6 +526,322 @@ function btnDescricaoProjeto(i, j){
 }
 
 
+function constructProjetos(projetos){
+    //console.log(projetos)
+    for(let i = 0; i < projetos.length; i++){
+
+        //Controi o componente cabeçalho
+        this.componentProjeto(projetos[i].nome, projetos[i].tipo, projetos[i].video, projetos[i].link, i, projetos[i].descricao.length)
+        
+        for(let j = 0; j < projetos[i].descricao.length; j++){
+
+            //Descrição
+            for(let [chaveN0, valorN0] of Object.entries(projetos[i].descricao[j])){
+
+                this.componentBtnDescricao(i, j, chaveN0);
+                let containerDescricao = this.getId(`container-descricao-${i}-${j}`);
+
+                if(typeof valorN0 === 'string'){
+
+                }else if(typeof valorN0 === 'object'){
+
+                    for(let [chaveN1, valorN1] of Object.entries(valorN0)){
+
+                        let descricaoN0 = document.createElement('div');
+                        descricaoN0.className = 'descricao-0';
+                        descricaoN0.innerText = chaveN1;
+
+                        containerDescricao.appendChild(descricaoN0);
+
+                        if(typeof valorN1 === 'string'){  
+
+                        }else if(typeof valorN1 === 'object'){
+
+                            
+                            for(let [chaveN2, valorN2] of Object.entries(valorN1)){
+
+                                let descricaoN1 = document.createElement('div')
+                                descricaoN1.className = 'descricao-1';
+                                descricaoN1.innerText = chaveN2;
+
+                                descricaoN0.appendChild(descricaoN1);
+
+                                if(typeof valorN2 === 'string'){
+                                
+                                    let descricaoN2 = document.createElement('div')
+                                    descricaoN2.className = 'descricao-2';
+                                    descricaoN2.innerText = valorN2;
+
+                                    descricaoN1.appendChild(descricaoN2);
+                                
+                                }else if(typeof valorN2 === 'object'){
+
+                                    for(let [chaveN3, valorN3] of Object.entries(valorN2)){
+
+                                        let descricaoN2 = document.createElement('div')
+                                        descricaoN2.className = 'descricao-2';
+                                        descricaoN2.innerText = chaveN3;
+
+                                        descricaoN1.appendChild(descricaoN2);
+
+                                        if(typeof valorN3 === 'string'){
+                                
+                                            //console.log(`Valor3: ${valorN3}`);
+                                            let descricaoN3 = document.createElement('div')
+                                            descricaoN3.className = 'descricao-3';
+                                            descricaoN3.innerText = valorN3;
+
+                                            descricaoN2.appendChild(descricaoN3);
+                                        
+                                        }else if(typeof valorN3 === 'object'){
+
+                                            for(let [chaveN4, valorN4] of Object.entries(valorN3)){
+
+                                                let descricaoN3 = document.createElement('div')
+                                                descricaoN3.className = 'descricao-3';
+                                                descricaoN3.innerText = chaveN4;
+
+                                                descricaoN2.appendChild(descricaoN3);
+
+                                                if(typeof valorN4 === 'string'){
+
+                                                    let descricaoN4 = document.createElement('div')
+                                                    descricaoN4.className = 'descricao-4';
+                                                    descricaoN4.innerText = valorN4;
+
+                                                    descricaoN3.appendChild(descricaoN4);
+                                                
+                                                }else if(Array.isArray(valorN4)){
+
+                                                    for(let k = 0; k < valorN4.length; k++){
+                                                        
+                                                        let descricaoN4 = document.createElement('div');
+                                                        descricaoN4.className = 'descricao-4';
+                                                        descricaoN4.innerText = valorN4[k];
+                                                        descricaoN3.appendChild(descricaoN4);
+
+                                                    }
+
+                                                }
+                                            
+                                            }
+
+                                        }
+            
+                                    }
+
+                                }
+
+                            }
+                        
+                        }
+
+                    }
+
+                }
+                
+            }
+
+        }
+
+        for(let [chave, valor] of Object.entries( projetos[i].stacks)){
+            
+            componentRodape(i, chave, valor)
+
+        }
+
+    }
+    
+}
+
+
+function componentBtnDescricao(i, j, valor){
+
+    let conteudoDescricao = this.getId(`conteudo-descricao-${i}-${j}`);
+
+        //Btn descrição
+        let btnDescricaoProjeto = document.createElement('div');
+        btnDescricaoProjeto.setAttribute('onclick', `btnDescricaoProjeto(${i}, ${j})`)
+        btnDescricaoProjeto.className = 'btn-projeto-descricao';
+        btnDescricaoProjeto.innerHTML = `
+            <strong style="display: inline-block;">${valor}</strong>
+
+            <div class="container-projeto-descricao-icon" id="container-projeto-descricao-icon-${i}-${j}">
+                <svg id="bi-chevron-${i}-${j}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </div>
+        `;
+
+        //Container descrição
+        let containerDescricao = document.createElement('div');
+        containerDescricao.setAttribute('id', `container-descricao-${i}-${j}`);
+        containerDescricao.style.display = 'none';
+
+    conteudoDescricao.appendChild(btnDescricaoProjeto);
+    conteudoDescricao.appendChild(containerDescricao);
+
+}
+
+function componentRodape(i, valor, estilo){
+
+    let containerRodape = this.getId(`container-rodape-stacks-${i}`)
+
+        let spanStack = document.createElement('span');
+        spanStack.className = estilo;
+        spanStack.innerText = valor;
+
+    containerRodape.appendChild(spanStack);
+
+}
+
+
+function componentProjeto(nome, tipo, video, link, indice, j){
+
+    let containerGrupoPortifolio = this.getId('grupo-container-portifolio');
+
+        //Container do portifolio
+        let containerPortifolio = document.createElement('div');
+        containerPortifolio.className = 'container-portifolio';
+
+            //Cabeçalho do portifolio
+            let cabecalhoPortifolio = document.createElement('div');
+            cabecalhoPortifolio.className = 'cabecalho-portifolio';
+
+                let tituloCabecalho = document.createElement('strong');
+                tituloCabecalho.innerText = nome;
+
+            cabecalhoPortifolio.appendChild(tituloCabecalho);
+
+            //Video ou img
+            let containerVideo = document.createElement('div');
+            containerVideo.className = 'portifolio-img';
+
+                let frameVideo = document.createElement('iframe');
+                frameVideo.className = 'youtube'; 
+                frameVideo.setAttribute('src', video)
+            
+            containerVideo.appendChild(frameVideo);
+
+            //Btn Ver mais
+            let containerVerMais = document.createElement('div')
+            containerVerMais.setAttribute('onclick', `btnVermais(${indice})`);
+            containerVerMais.style.position = 'relative';
+            containerVerMais.style.top = '0';
+            containerVerMais.style.height = '20px';
+            containerVerMais.className = 'btn-mostrar-descricao';
+
+                //Btn texto 
+                let btnTextoVerMais = document.createElement('div');
+                btnTextoVerMais.style.position = 'absolute';
+                btnTextoVerMais.style.top = '6px';
+                btnTextoVerMais.style.left = '8px';
+                
+                    //Strong vermais
+                    let textoVerMaisStrong = document.createElement('strong');
+                    textoVerMaisStrong.setAttribute('id', `text-vermais-${indice}`)
+                    textoVerMaisStrong.innerText = 'Ver mais';
+                    
+                btnTextoVerMais.appendChild(textoVerMaisStrong);
+
+                //Icon seta para baixo
+                let containerInconBaixo = document.createElement('div'); 
+                containerInconBaixo.setAttribute('id', `container-icon-vermais-${indice}`);
+                containerInconBaixo.style.position = 'absolute';
+                containerInconBaixo.style.top = '6px';
+                containerInconBaixo.style.right = '8px';
+                containerInconBaixo.innerHTML = `
+                    <svg id="icon-vermais-${indice}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                `;
+
+            containerVerMais.appendChild(btnTextoVerMais);
+            containerVerMais.appendChild(containerInconBaixo)
+
+            //Container descrição 
+            let containerDescricao = document.createElement('div');
+            containerDescricao.setAttribute('id', `descricao-${indice}`);
+            containerDescricao.style.display = 'none';
+            containerDescricao.className = 'portifolio-descricao';
+
+                //Container do link
+                let contaninerLinkProjeto = document.createElement('p');
+
+                    //Link
+                    let linkProjeto = document.createElement('a');
+                    linkProjeto.style.textDecoration = 'none';
+                    linkProjeto.href = link;
+                    linkProjeto.target = '_blank';
+
+                        //Container de texto e icon do link
+                        let containerTextLink =document.createElement('span');
+                        containerTextLink.style.color = 'black';
+                        containerTextLink.innerHTML = `
+                            <img style="position: relative; top: 6px;" src="assets/icon/link.svg" alt="label do projeto"> 
+					        Link do projeto:
+                        `;
+
+                        //container link 
+                        let containerLink = document.createElement('span');
+                        containerLink.style.textDecoration = 'underline';
+                        containerLink.innerText = link;
+                            
+                    linkProjeto.appendChild(containerTextLink);
+                    linkProjeto.appendChild(containerLink);
+
+                contaninerLinkProjeto.appendChild(linkProjeto)
+
+                //Container Nome do Projeto
+                let containerNomeProjeto = document.createElement('p');
+                containerNomeProjeto.innerHTML = `<strong>Nome do projeto</strong>: ${nome}`;
+
+                //Container Nome do Projeto
+                let containerTipoProjeto = document.createElement('p');
+                containerTipoProjeto.innerHTML = `<strong>Tipo de aplicação</strong>: ${tipo}`;
+
+                
+
+            containerDescricao.appendChild(contaninerLinkProjeto);
+            containerDescricao.appendChild(containerNomeProjeto);
+            containerDescricao.appendChild(containerTipoProjeto);
+            
+            //Container conteudo descrição
+            for(let k = 0; k < j; k++){
+                let conteudoDescricao = document.createElement('div');
+                conteudoDescricao.setAttribute('id', `conteudo-descricao-${indice}-${k}`);
+                conteudoDescricao.className = 'projeto-descricao';
+                containerDescricao.appendChild(conteudoDescricao);
+            }
+
+            //Container rodapé
+            let containerRodape = document.createElement('div');
+            containerRodape.className = 'rodape-portifolio';
+
+                let containerRodapeConteudo = document.createElement('div');
+                containerRodapeConteudo.style.position = 'relative';
+                
+                    let tituloRodape = document.createElement('strong');
+                    tituloRodape.innerText = 'Stacks: ';
+
+                    let containerStaks = document.createElement('div');
+                    containerStaks.setAttribute('id', `container-rodape-stacks-${indice}`)
+                    containerStaks.className = 'radape-portifolio-stacks';
+
+                containerRodapeConteudo.appendChild(tituloRodape);
+                containerRodapeConteudo.appendChild(containerStaks);
+
+            containerRodape.appendChild(containerRodapeConteudo);
+
+        containerPortifolio.appendChild(cabecalhoPortifolio);
+        containerPortifolio.appendChild(containerVideo);
+        containerPortifolio.appendChild(containerVerMais);
+        containerPortifolio.appendChild(containerDescricao);
+        containerPortifolio.appendChild(containerRodape);
+
+    containerGrupoPortifolio.appendChild(containerPortifolio);
+
+}
 
 
 
