@@ -53,9 +53,9 @@ function breakPoints(largura){
          
         arrayContainerPortifolio[i].style.width = '50%';
         arrayVideoYouTube[i].setAttribute('width', '100%');
+
         arrayVideoYouTube[i].setAttribute('height', "400")
     } 
-    
     
     
     //width="100%" height="400"
@@ -532,7 +532,7 @@ function constructProjetos(projetos){
 
         //Controi o componente cabeçalho
         this.componentProjeto(projetos[i].nome, projetos[i].tipo, projetos[i].video, projetos[i].link, i, projetos[i].descricao.length)
-        
+
         for(let j = 0; j < projetos[i].descricao.length; j++){
 
             //Descrição
@@ -542,10 +542,12 @@ function constructProjetos(projetos){
                 let containerDescricao = this.getId(`container-descricao-${i}-${j}`);
 
                 if(typeof valorN0 === 'string'){
-
+                   
                 }else if(typeof valorN0 === 'object'){
 
                     for(let [chaveN1, valorN1] of Object.entries(valorN0)){
+
+                        console.log(`Chave: ${chaveN1} | Valor: ${valorN1}`)
 
                         let descricaoN0 = document.createElement('div');
                         descricaoN0.className = 'descricao-0';
@@ -688,6 +690,7 @@ function componentRodape(i, valor, estilo){
     let containerRodape = this.getId(`container-rodape-stacks-${i}`)
 
         let spanStack = document.createElement('span');
+        spanStack.style.boxShadow = '3px 3px 4px rgba(0, 0, 0, 0.301)';
         spanStack.className = estilo;
         spanStack.innerText = valor;
 
@@ -703,6 +706,7 @@ function componentProjeto(nome, tipo, video, link, indice, j){
         //Container do portifolio
         let containerPortifolio = document.createElement('div');
         containerPortifolio.className = 'container-portifolio';
+        containerPortifolio.setAttribute('id', `container-portifolio-${indice}`)
 
             //Cabeçalho do portifolio
             let cabecalhoPortifolio = document.createElement('div');

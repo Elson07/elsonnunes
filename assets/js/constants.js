@@ -95,6 +95,18 @@ const projetos = [
                         'JavaScript': 'Linguagem de programação, utilizada para interatividade da aplicação.'
                     }
                 } 
+            },
+            {
+                'Casos de uso e regras de negócios' : {
+                    'Navegação': {
+                        'Menu de navegação': 'Links de navegação horizontal (mostrando todos os links) ou vertical (que só é exibido ao clicar no botão hambúrguer), dependendo da resolução da tela do dispositivo. Os links referem-se a Home, Sobre, Projetos, Contato, GitHub, YouTube e Facebook.',
+                        'Home': 'Uma breve apresentação sobre as tecnologias que domino.',
+                        'Sobre': 'Um texto sobre mim e alguns containers que contêm minha formação e a descrição de cada curso.',
+                        'Projetos': 'Alguns projetos nos quais eu trabalhei, contendo o link para teste, imagem e vídeo de testes de usabilidade, descrição e as tecnologias que compõem o projeto.',
+                        'Contato': "Formas de contato, como telefone, WhatsApp, e-mail e formulário para envio de mensagens, em que implementei uma API de envio e recebimento de e-mail, o 'EmailJS'."
+                    }
+                }
+            
             }
         ],
         stacks: {
