@@ -456,7 +456,6 @@ function contructFeedBeckSendEmail(){
             content.style.margin = 'auto';
             content.style.padding = '10px';
             content.innerHTML = `
-                <p>Olá <span id="message-user"></span>!</p>
                 <p>Obrigado pela  sua menssagem :)</p><br>
             
                 <p>Caso você tenha clicado em receber contato, respoderei seu email em breve!</p>

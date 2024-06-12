@@ -80,7 +80,7 @@ const projetos = [
     },
     {
         link: 'https://elson07.github.io/elsonnunes/',
-        video: 'https://www.youtube.com/embed/MPtZXEIVUfA',
+        video: 'https://www.youtube.com/embed/gD2gXxHsgqY', //https://youtu.be/gD2gXxHsgqY
         nome: 'Developer Full Stack',
         tipo: 'Portifólio',
         descricao: [
