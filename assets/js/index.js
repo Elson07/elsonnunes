@@ -425,7 +425,6 @@ function contructFeedBeckSendEmail(){
     if(!this.getId('cabecalho-menssagem')){
 
         let container = this.getId('mesage-feedback');
-        container.style.display = 'none';
 
             /* Cabeçalho */
             let header = document.createElement('header');
@@ -470,7 +469,8 @@ function contructFeedBeckSendEmail(){
 
 function closedMesage(){
 
-    this.getId('mesage-feedback').innerHTML = '';
+    this.getId('cabecalho-menssagem').remove()
+    this.getId('conteudo-menssagem').remove()
 
 }
 

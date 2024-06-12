@@ -558,3 +558,9 @@ ul li a:hover{
     display: block;
     width: 243px;
 }
+
+#mesage-feedback{
+    position: fixed; 
+    top: 35%; 
+    width: 100%;
+}

@@ -31,9 +31,6 @@
 
         window.onload = function() {
 
-            //Constroi o container de aviso de evio de memssagem.
-            this.contructFeedBeckSendEmail();
-            
             document.getElementById('contact-form').addEventListener('submit', function(event) {
 
                 // Atribuir animação de subminção de dados 
@@ -44,16 +41,9 @@
                 emailjs.sendForm(emailjsConfig.idService, emailjsConfig.idModelEmail, this)
                     
                     .then(() => {
-
-                        //Mostra o container menssagem, caso sucesso.
-                        document.getElementById('mesage-feedback').style.display = '';
-
+                        
                         // Tratativa no caso de sucesso 
                         console.log('SUCCESS!');
-
-                        //Escre algus valores no container de avisso de envio de massagem, casso de sucesso 
-                        //document.getElementById('message-user').innerText = document.getElementById('nome').value;
-                        //console.log(document.getElementById('nome').value)
 
                         // Linpa o formalario 
                         document.getElementById('nome').value = '';
@@ -67,11 +57,16 @@
                         document.getElementById('enviar').innerHTML = 'Enviar';
                         document.getElementById('enviar').className = 'submit-mensagem-inactive';
 
+                        window.alert('Mensagem enviada com sucesso!')
+
                     }, (error) => {
                         console.log('FAILED...', error);
-                });
-                
-            });
+                        window.alert(`Erro no envio da mensagem :( \n${error}`);
+                        document.getElementById('enviar').innerHTML = 'Enviar';
+                        document.getElementById('enviar').className = 'submit-mensagem-inactive';
+                    }
+                );}
+            );
         }
     </script>
 
@@ -575,7 +570,7 @@
 
     </article>
 
-    <div id="mesage-feedback" style="position: fixed; top: 35%; width: 100%;"></div>
+    <div id="mesage-feedback"></div>
     
     <footer style="background-color: rgb(207, 207, 207); color: rgb(80, 80, 80); margin-top: 4rem; border-top: 1px solid rgb(131, 131, 131);">
         2024 © Todos os direitos reservados - Elson Nunes
