@@ -421,56 +421,55 @@ function btnVermais(indice){
 }
 
 function contructFeedBeckSendEmail(){
+    
+    if(!this.getId('mesage-feedback')){
 
-    if(!this.getId('cabecalho-menssagem')){
+        let body = this.getId('resolucao');
 
-        let container = this.getId('mesage-feedback');
+            let container = document.createElement('div')
+            container.setAttribute('id', 'mesage-feedback');
 
-            /* Cabeçalho */
-            let header = document.createElement('header');
-            header.setAttribute('id', 'cabecalho-menssagem');
-            header.style.border = '1px solid green';
-            header.style.width = '30rem';
-            header.style.background = 'green';
-            header.style.color = 'white';
-            header.style.margin = 'auto';
-            header.style.padding = '10px';
-            header.style.position = 'relative';
-            header.innerHTML = `
-                <span id="header-text-mesage">Menssagem enviada com sucesso!</span>   
-                <div style="position: absolute; top: .5rem; right: .5rem;">
-                    <svg onclick="closedMesage()" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                    </svg>
-                </div>
-            `;
-            
-            /* Conteudo */
-            let content = document.createElement('div');
-            content.setAttribute('id', 'conteudo-menssagem');
-            content.style.border = '1px solid green';
-            content.style.width = '30rem';
-            content.style.background = 'rgb(210, 250, 210)';
-            content.style.color = 'green';
-            content.style.margin = 'auto';
-            content.style.padding = '10px';
-            content.innerHTML = `
-                <p>Obrigado pela  sua menssagem :)</p><br>
-            
-                <p>Caso você tenha clicado em receber contato, respoderei seu email em breve!</p>
-                <p>Atenciosamente, Elson.</p>
-            `;
+                /* Cabeçalho */
+                let header = document.createElement('header');
+                header.setAttribute('id', 'cabecalho-menssagem');
+                header.style.width = '30rem';
+                header.style.margin = 'auto';
+                header.style.padding = '10px';
+                header.style.position = 'relative';
+                header.innerHTML = `
+                    <span id="header-text-mesage"></span>   
+                    <div style="position: absolute; top: .5rem; right: .5rem;">
+                        <svg onclick="closedMesage()" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </div>
+                `;
+                
+                /* Conteudo */
+                let content = document.createElement('div');
+                content.setAttribute('id', 'conteudo-menssagem');
+                content.style.width = '30rem';
+                content.style.margin = 'auto';
+                content.style.padding = '10px';
+                content.innerHTML = `
+                    <p id="aviso-menssagem"></p><br>
+                
+                    <p id="aviso-descricao"></p>
+                    <p id="aviso-fechamento"></p>
+                `;
 
-        container.appendChild(header)
-        container.appendChild(content)
+            container.appendChild(header)
+            container.appendChild(content)
+
+        body.appendChild(container)
+
     }
     
 }
 
 function closedMesage(){
 
-    this.getId('cabecalho-menssagem').remove()
-    this.getId('conteudo-menssagem').remove()
+    this.getId('mesage-feedback').style.display = 'none';
 
 }
 

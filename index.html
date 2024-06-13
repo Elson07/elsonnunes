@@ -30,7 +30,11 @@
     <script type="text/javascript">
 
         window.onload = function() {
-
+            
+            //Constroi o container de aviso
+            this.contructFeedBeckSendEmail()
+            document.getElementById('mesage-feedback').style.display = 'none';
+            
             document.getElementById('contact-form').addEventListener('submit', function(event) {
 
                 // Atribuir animação de subminção de dados 
@@ -38,12 +42,11 @@
 
                 event.preventDefault();
                 // Submetemos nosso formulário de contato e o enviamos através do EmailJS, usando nosso Serviço de Contato e Formulário de Contato :
-                emailjs.sendForm(emailjsConfig.idService, emailjsConfig.idModelEmail, this)
+                emailjs.sendForm(emailjsConfig.idService, emailjsConfig.idModelEmail, this) 
                     
                     .then(() => {
                         
                         // Tratativa no caso de sucesso 
-                        console.log('SUCCESS!');
 
                         // Linpa o formalario 
                         document.getElementById('nome').value = '';
@@ -57,17 +60,58 @@
                         document.getElementById('enviar').innerHTML = 'Enviar';
                         document.getElementById('enviar').className = 'submit-mensagem-inactive';
 
-                        window.alert('Mensagem enviada com sucesso!')
+                        //Edita o container de aviso 
+                        document.getElementById('mesage-feedback').style.display = ''
+                        document.getElementById('cabecalho-menssagem').style.border = '1px solid green';
+                        document.getElementById('cabecalho-menssagem').style.background = 'green'
+                        document.getElementById('cabecalho-menssagem').style.color = 'white';
+                        document.getElementById('header-text-mesage').innerText = 'Menssagem enviada com sucesso!'
 
+                        document.getElementById('conteudo-menssagem').style.border = '1px solid green';
+                        document.getElementById('conteudo-menssagem').style.background = 'rgb(210, 250, 210)';
+                        document.getElementById('conteudo-menssagem').style.color = 'green';
+
+                        document.getElementById('aviso-menssagem').innerText = 'Obrigado pela  sua menssagem :)';
+                        document.getElementById('aviso-descricao').innerText = 'Caso você tenha clicado em receber contato, respoderei seu email em breve!';
+                        document.getElementById('aviso-fechamento').innerText = 'Atenciosamente, Elson.';
+                        
                     }, (error) => {
-                        console.log('FAILED...', error);
-                        window.alert(`Erro no envio da mensagem :( \n${error}`);
+
+                        // Linpa o formalario 
+                        document.getElementById('nome').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('telefone').value = '';
+                        document.getElementById('assunto').value = '';
+                        document.getElementById('message').value = '';
+                        document.getElementById('receber-contato').checked = false;
+
+                        //Btn enviar
                         document.getElementById('enviar').innerHTML = 'Enviar';
                         document.getElementById('enviar').className = 'submit-mensagem-inactive';
+                        
+                        //Container de aviso
+                        document.getElementById('mesage-feedback').style.display = ''
+                        document.getElementById('cabecalho-menssagem').style.border = '1px solid black';
+                        document.getElementById('cabecalho-menssagem').style.background = 'black'
+                        document.getElementById('cabecalho-menssagem').style.color = 'white';
+                        document.getElementById('header-text-mesage').innerText = '!Erro'
+
+                        document.getElementById('conteudo-menssagem').style.border = '1px solid black';
+                        document.getElementById('conteudo-menssagem').style.background = 'rgb(177, 177, 177)';
+                        document.getElementById('conteudo-menssagem').style.color = 'black';
+
+                        document.getElementById('aviso-menssagem').innerHTML = `Ops! Ocorreu um erro. <br><br>FAILED...<br>${error}`;
+                        document.getElementById('aviso-descricao').innerText = 'Tivemos um pequeno contratempo.';
+                        document.getElementById('aviso-fechamento').innerText = 'Por favor, tente novamente mais tarde ou utilize outra forma de contato.';
+
                     }
                 );}
+
             );
+
         }
+
+        
     </script>
 
     <!--\\Fim E-mail JS -->
@@ -201,7 +245,7 @@
                             </div>
 
                             <script>
-                                let textos = ["C:\\User> Olá, meu nome é Elson :)", "C:\\User> E sou desenvolvedor Full Stack"];
+                                let textos = ["C:\\User> Olá, meu nome é Elson :)", "C:\\User> Desenvolvedor Full Stack"];
                                 let elementos = [document.getElementById('text-1'), document.getElementById('text-2')];
                                 const velocidade = 100;
 
@@ -287,18 +331,19 @@
                 
                 <h2 class="titulo-1">Sobre</h2>
 
-                <p style="margin-bottom: .2rem;">
-                    Sou de Jataizinho, Paraná, formado em Análise e Desenvolvimento de Sistemas pela PUCPR. Programo desde os 13 anos de idade e gosto de ler, jogar videogame 
-                    e desenvolver sistemas como serviços de marketplace, sites, jogos e IoT.
-                </p>
-
-                <p style="margin-bottom: .2rem;">
-                    No que diz respeito a valores, fui criado em um ambiente familiar saudável e cristão, que tomo como base moral e que faz parte de quem eu sou.
-                </p>
-
-                <p>
-                    Respeito a todos os indivíduos, independentemente de sua crença, identidade ou raça, e estou sempre disposto a aprender e colaborar com o próximo.
-                </p>
+                <p>Sou de Jataizinho, Paraná, formado em Análise e Desenvolvimento de Sistemas pela PUCPR. Programo desde os 13 anos de idade e gosto de ler, jogar 
+                videogame e desenvolver sistemas, como serviços de marketplace, sites, jogos e IoT.</p>
+                <p>Atualmente, as tecnologias que domino e com as quais estou habituado a trabalhar incluem:</p>
+                <ul>
+                    <li><strong>PHP:</strong> Linguagem de programação para servidores web.</li>
+                    <li><strong>MySQL ou MariaDB:</strong> Linguagem SQL para banco de dados relacional.</li>
+                    <li><strong>JavaScript:</strong> Linguagem de programação que permite manipular o DOM.</li>
+                    <li><strong>HTML:</strong> Linguagem de marcação utilizada para estruturar páginas web.</li>
+                    <li><strong>CSS:</strong> Folhas de estilo para HTML.</li>
+                    <li><strong>Git:</strong> Ferramenta para versionamento de código.</li>
+                </ul>
+                <p>Além dessas tecnologias, tenho facilidade em trabalhar com outras linguagens de programação e frameworks.</p>
+                <p>Para mais informações, entre em <a href="#contato">contato</a>.</p>
 
                 <h3 class="titulo-2">Formação</h3>
 
@@ -570,8 +615,7 @@
 
     </article>
 
-    <div id="mesage-feedback"></div>
-    
+    <div style="color: rgb(177, 177, 177);"></div>
     <footer style="background-color: rgb(207, 207, 207); color: rgb(80, 80, 80); margin-top: 4rem; border-top: 1px solid rgb(131, 131, 131);">
         2024 © Todos os direitos reservados - Elson Nunes
     </footer>
