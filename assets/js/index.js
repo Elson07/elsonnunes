@@ -77,10 +77,12 @@ function breakPoints(largura){
     btnEnviar.style.width = '243px';
     
     //Container aviso
+    /*
     let containerAvisoCabecalhoMessagem = this.getId('cabecalho-menssagem');
     containerAvisoCabecalhoMessagem.style.width = '30rem';
     let containerAvisoConteudoMessagem = this.getId('conteudo-menssagem');
     containerAvisoConteudoMessagem.style.width = '30rem';
+    */
 
     //xs
     if(largura <= 575){
@@ -122,8 +124,7 @@ function breakPoints(largura){
         textArea.style.width = '94%';
         btnEnviar.style.width = '100%';
         
-        containerAvisoCabecalhoMessagem.style.width = '90%';
-        containerAvisoConteudoMessagem.style.width = '90%';
+
 
     //sm
     }else if(largura <= 767){
