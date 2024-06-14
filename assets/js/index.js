@@ -75,14 +75,12 @@ function breakPoints(largura){
     fieldset.style.marginLeft = '.8rem';
     textArea.style = '';
     btnEnviar.style.width = '243px';
-    
     //Container aviso
-    /*
-    let containerAvisoCabecalhoMessagem = this.getId('cabecalho-menssagem');
-    containerAvisoCabecalhoMessagem.style.width = '30rem';
-    let containerAvisoConteudoMessagem = this.getId('conteudo-menssagem');
-    containerAvisoConteudoMessagem.style.width = '30rem';
-    */
+    if(this.getId('cabecalho-menssagem')){
+        this.getId('cabecalho-menssagem').style.width = '30rem';
+        this.getId('conteudo-menssagem').style.width = '30rem';
+    }
+   
 
     //xs
     if(largura <= 575){
@@ -123,6 +121,10 @@ function breakPoints(largura){
         fieldset.style.margin = 'auto';
         textArea.style.width = '94%';
         btnEnviar.style.width = '100%';
+        if(this.getId('cabecalho-menssagem')){
+            this.getId('cabecalho-menssagem').style.width = '90%';
+            this.getId('conteudo-menssagem').style.width = '90%';
+        }
         
 
 
