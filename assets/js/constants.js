@@ -119,3 +119,110 @@ const projetos = [
     }
 ];
 
+
+const formacao = [
+    {
+        curso : 'Análise e Desenvolvimento de Sistemas',
+        instituicao: 'PONTIFÍCIA UNIVERSIDADE CATÓLICA DO PARANÁ',
+        grade: [
+            'Raciocínio Computacional',
+            'Teologia e Sociedade',
+            'Fundamentos de Programação Web',
+            'Matemática Aplicada à Computação',
+            'Introdução à Filosofia',
+            'Fundamentos da Programação Orientada a Objetos',
+            'Métodos de Pesquisa e Ordenação em Estruturas de Dados',
+            'Comunicação Aplicada',
+            'Empreendedorismo e Inovação',
+            'Banco de Dados para Tecnologia da Informação',
+            'Fundamentos de Internet das Coisas',
+            'Ética',
+            'Fundamentos Engenharia de Software',
+            'Segurança da Tecnologia da Informação',
+            'Especificação de Sistemas de Informação',
+            'Gestão de Projetos em Computação',
+            'Inteligência Analítica em Negócios',
+            'Fundamentos de Big Data',
+            'Projeto de Sistemas de Informação',
+            'Educação, Identidade e Solidariedade',
+            'Interação Humano Computador',
+            'Internet das Coisas em um Mundo Conectado',
+            'Métodos Ágeis em TI',
+            'Gestão de Serviços de Tecnologia da Informação',
+            'Cloud Computing',
+            'Desenvolvimento para dispositivos móveis',
+            'Sistemas Web Seguros',
+            'Tecnologias Para Desenvolvimento Web',
+            'DevOps'
+        ]
+        
+    },
+    {
+        curso : 'Desenvolvimento Web',
+        instituicao: 'Udemy', 
+        grade: [
+            'HTML5',
+            'CSS3',
+            'CSS3 Intermediário & avançado',
+            'HTML5 & CSS3',
+            'Bootstrap 4 & Design responsivo',
+            'JavaScript',
+            'Bootstrap 4 & Design responsivo',
+            'ECMAScript 2015 (ES6) e Orientação a Objetos',
+            'Linguagem de Programação PHP  (Hypertext Preprocessor)',
+            'PHP e Orientação a Objetos',
+            'Banco de dados MySQL',
+            'Ajax',
+            'PHP com PDO e MySQL',
+            'Publicação de aplicações Web na Internet',
+            'jQuery',
+            'Padrão de arquitetura MVC com PHP',
+            'API com Slim Framework',
+            'SASS',
+            'Criando aplicações Mobile com IONIC',
+            'WordPress'
+        ]
+    },
+    {
+        curso : 'Desenvolvimento de Apps Android Java',
+        instituicao: 'Udemy',
+        grade: [
+            'Lógica e algoritimos',
+            'Java - Fundamentos',
+            'Java - Conceitos iniciais',
+            'Java - Funções',
+            'Java - Controle de fluxo',
+            'Exceções',
+            'Testes unitários',
+            '[Java] Arrays',
+            '[Java] Conceitos - Orientação a objetos',
+            '[Java] Herança',
+            'Layout - Conceitos de layout e LinearLayout',
+            'Convenções de código',
+            'Layout - RelativeLayout',
+            'AndroidX e aplicações antigas',
+            'Layout - Elementos',
+            'Layout - ConstraintLayout',
+            'Internacionalização'
+        ]
+        
+    },
+    {
+        curso : 'Python',
+        instituicao: 'Curso em Vídeo',
+        grade: [
+            'Tratamento de Dados',
+            'Usando módulos',
+            'Condições em Python',
+            'Repetições em Python',
+            'Tuplas em Python',
+            'Listas em Python',
+            'Dicionários em Python',
+            'Funções em Python',
+            'Modularização em Python',
+            'Tratamento de Erros em Python'
+        ]
+        
+    }
+
+];

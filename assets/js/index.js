@@ -194,6 +194,7 @@ function breakPoints(largura){
         //Container portifólio
         for(let i = 0; i < arrayVideoYouTube.length; i++){
             
+            arrayContainerPortifolio[i].style.width = '48%';
             arrayVideoYouTube[i].setAttribute('width', '100%');
             arrayVideoYouTube[i].setAttribute('height', "280");
 
@@ -225,13 +226,23 @@ function breakPoints(largura){
         for(let i = 0; i < arrayContainerCurso.length; i++){
             
             //arrayContainerCurso[i].style.width = '47%';
-            arrayContainerCurso[i].style.width = '49.75%';
+            arrayContainerCurso[i].style.width = '49.5%';
             
             if(i < (parseInt(arrayContainerCurso.length)-1) ){
                 arrayContainerCurso[i].style.marginBottom = '.35rem';
             }
             
         } 
+
+        //Container portifólio
+        grupoContainerPortifolio.style.display = 'block';
+        for(let i = 0; i < arrayContainerPortifolio.length; i++){
+            
+            arrayContainerPortifolio[i].style.width = '48%';
+            arrayVideoYouTube[i].setAttribute('width', '100%');
+            arrayVideoYouTube[i].setAttribute('height', "300");
+
+        }
 
         //Formulario 
         if(largura >= 1399){
@@ -261,10 +272,10 @@ function breakPoints(largura){
         //Sobre, formação  
         for(let i = 0; i < arrayContainerCurso.length; i++){
             
-            if(largura >= 1451){
-                arrayContainerCurso[i].style.width = '49.8%';
+            if(largura >= 1623){
+                arrayContainerCurso[i].style.width = '49.6%';
             }else{
-                arrayContainerCurso[i].style.width = '49.75%';
+                arrayContainerCurso[i].style.width = '49.5%';
             }
             
             
@@ -554,8 +565,6 @@ function constructProjetos(projetos){
 
                     for(let [chaveN1, valorN1] of Object.entries(valorN0)){
 
-                        console.log(`Chave: ${chaveN1} | Valor: ${valorN1}`)
-
                         let descricaoN0 = document.createElement('div');
                         descricaoN0.className = 'descricao-0';
                         descricaoN0.innerText = chaveN1;
@@ -595,7 +604,6 @@ function constructProjetos(projetos){
 
                                         if(typeof valorN3 === 'string'){
                                 
-                                            //console.log(`Valor3: ${valorN3}`);
                                             let descricaoN3 = document.createElement('div')
                                             descricaoN3.className = 'descricao-3';
                                             descricaoN3.innerText = valorN3;
@@ -855,5 +863,144 @@ function componentProjeto(nome, tipo, video, link, indice, j){
 }
 
 
+async function escreverTexto() {
+    
+    let textos = [
+        "C:\\User> Olá, meu nome é Elson :)", 
+        "C:\\User> Desenvolvedor Full Stack"
+    ];
 
+    for(i = 0; i < textos.length; i++){
 
+        let textoApresentacao = "C:\\User>";
+        document.getElementById(`text-${i}`).innerText = textoApresentacao;
+
+        for (let j = 8; j < textos[i].length; j++) {
+            
+            if(j < (textos[i].length) - 2){
+                setTimeout(()=>{
+                    
+                    document.getElementById(`text-${i}`).innerText =  textoApresentacao + '|';
+
+                }, 150)
+                textoApresentacao = textoApresentacao.replace('|', '');
+            }
+            
+            textoApresentacao += textos[i][j];
+            document.getElementById(`text-${i}`).innerText = textoApresentacao;
+            
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+        }
+    
+    }
+
+}
+
+function contructFormacao(){
+
+    for(let i = 0; i < formacao.length; i++){
+
+        //Conainer formação
+        let containerFormacao = this.getId('container-formacao');
+
+            //Container curso
+            let conteinerCurso = document.createElement('div');
+            conteinerCurso.className = 'container-curso';
+
+                //Cabeçalho 
+                let cabecalho = document.createElement('header');
+                cabecalho.setAttribute('onclick', `openCurso(${i})`);
+                cabecalho.className = 'cabecalho-curso';
+
+                    //Texto 
+                    let textoCurso = document.createElement('strong');
+                    textoCurso.innerText = formacao[i].curso;
+
+                    //Conainer Btn mostrar/esconder conteúdo
+                    let btnCuroso = document.createElement('div');
+                    btnCuroso.setAttribute('id', `chevron-${i}`);
+                    btnCuroso.className = 'btn-cabecalho-curso';
+                    btnCuroso.innerHTML = `
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                        </svg>
+                    `;
+
+                cabecalho.appendChild(textoCurso);
+                cabecalho.appendChild(btnCuroso);
+
+                //Conteúdo
+                let conteudo = document.createElement('div');
+                conteudo.style.display = 'none';
+                conteudo.setAttribute('id', `curso-${i}`)
+                conteudo.className = 'oculto';
+
+                    //Instituição de ensino
+                    let instituicao = document.createElement('strong')
+                    instituicao.style.display = 'block';
+                    instituicao.innerText = formacao[i].instituicao;
+
+                    //Container grade
+                    let grade = document.createElement('div')
+
+                    for(let j = 0; j < formacao[i].grade.length; j++){
+
+                        let textoGrade = document.createElement('span');
+                        textoGrade.innerText = formacao[i].grade[j];
+                        grade.appendChild(textoGrade);
+
+                    }
+                    
+                conteudo.appendChild(instituicao);
+                conteudo.appendChild(grade);
+
+            conteinerCurso.appendChild(cabecalho);
+            conteinerCurso.appendChild(conteudo);
+            
+        containerFormacao.appendChild(conteinerCurso);
+
+    }
+
+}
+
+/* 
+    <!-- Corpo-->
+    <div style="display: none;" id="curso-1" class="oculto">
+        <strong style="display: block;">PONTIFÍCIA UNIVERSIDADE CATÓLICA DO PARANÁ</strong>
+        <div>
+            <span>Raciocínio Computacional</span>
+            <span>Teologia e Sociedade</span>
+            <span>Fundamentos de Programação Web</span>
+            <span>Matemática Aplicada à Computação</span>
+            <span>Introdução à Filosofia</span>
+            <span>Fundamentos da Programação Orientada a Objetos</span>
+            <span>Métodos de Pesquisa e Ordenação em Estruturas de Dados</span>
+            <span>Comunicação Aplicada</span>
+            <span>Empreendedorismo e Inovação</span>
+            <span>Banco de Dados para Tecnologia da Informação</span>
+            <span>Fundamentos de Internet das Coisas</span>
+            <span>Ética</span>
+            <span>Fundamentos Engenharia de Software</span>
+            <span>Segurança da Tecnologia da Informação</span>
+            <span>Especificação de Sistemas de Informação</span>
+            <span>Gestão de Projetos em Computação</span>
+            <span>Inteligência Analítica em Negócios</span>
+            <span>Fundamentos de Big Data</span>
+            <span>Projeto de Sistemas de Informação</span>
+            <span>Educação, Identidade e Solidariedade</span>
+            <span>Interação Humano Computador</span>
+            <span>Internet das Coisas em um Mundo Conectado</span>
+            <span>Métodos Ágeis em TI</span>
+            <span>Gestão de Serviços de Tecnologia da Informação</span>
+            <span>Cloud Computing</span>
+            <span>Desenvolvimento para dispositivos móveis</span>
+            <span>Sistemas Web Seguros</span>
+            <span>Tecnologias Para Desenvolvimento Web</span>
+            <span>DevOps</span>
+        </div>
+    </div>
+</div>
+<!--//Fim Container curso -->
+
+*/

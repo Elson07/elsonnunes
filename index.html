@@ -237,44 +237,10 @@
 
                         <!-- Conteudo -->
                         <div style="height: 10rem; background-color: rgb(53, 53, 53); color: rgb(228, 228, 228);">
-                            <div id="text-1">
-                                
-                            </div>
-                            <div id="text-2">
-                                 
-                            </div>
-
+                            <div id="text-0"></div>
+                            <div id="text-1"></div>
                             <script>
-                                let textos = ["C:\\User> Olá, meu nome é Elson :)", "C:\\User> Desenvolvedor Full Stack"];
-                                let elementos = [document.getElementById('text-1'), document.getElementById('text-2')];
-                                const velocidade = 100;
-
-                                async function escreverTexto(texto, elemento) {
-                                    let textoApresentacao = 'C:\\User>';
-                                    elemento.innerText = textoApresentacao;
-                                    for (let i = 8; i < texto.length; i++) {
-                                        
-                                        if(i < (texto.length) - 2){
-                                            setTimeout(()=>{
-                                                
-                                                elemento.innerText =  textoApresentacao + '|';
-                                            }, 150)
-                                            textoApresentacao = textoApresentacao.replace('|', '');
-                                        }
-                                        
-                                        textoApresentacao += texto[i];
-                                        elemento.innerText = textoApresentacao;
-                                        
-                                        await new Promise(resolve => setTimeout(resolve, velocidade));
-                                    }
-                                }
-
-                                async function executarEscritaSequencial() {
-                                    await escreverTexto(textos[0], elementos[0]);
-                                    await escreverTexto(textos[1], elementos[1]);
-                                }
-
-                                executarEscritaSequencial();
+                                escreverTexto();
                             </script>
                         </div>
                         <!--\\Fim Conteudo -->
@@ -347,168 +313,11 @@
 
                 <h3 class="titulo-2">Formação</h3>
 
+                <div id="container-formacao" class="container-formacao">
 
-                <div class="container-formacao">
-
-                    <!-- Container curso -->
-                    <div class="container-curso">
-                        <!-- Cabeçalho -->
-                        <header onclick="openCurso(1)" class="cabecalho-curso">
-                            <strong>Análise e Desenvolvimento de Sistemas</strong>
-                            <!--Btn mostrar conteudo-->
-                            <div id="chevron-1" class="btn-cabecalho-curso">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                                </svg>
-                            </div>
-                        </header>
-                        <!-- Corpo-->
-                        <div style="display: none;" id="curso-1" class="oculto">
-                            <strong style="display: block;"> PONTIFÍCIA UNIVERSIDADE CATÓLICA DO PARANÁ</strong>
-                            <div>
-                                <span>Raciocínio Computacional</span>
-                                <span>Teologia e Sociedade</span>
-                                <span>Fundamentos de Programação Web</span>
-                                <span>Matemática Aplicada à Computação</span>
-                                <span>Introdução à Filosofia</span>
-                                <span>Fundamentos da Programação Orientada a Objetos</span>
-                                <span>Métodos de Pesquisa e Ordenação em Estruturas de Dados</span>
-                                <span>Comunicação Aplicada</span>
-                                <span>Empreendedorismo e Inovação</span>
-                                <span>Banco de Dados para Tecnologia da Informação</span>
-                                <span>Fundamentos de Internet das Coisas</span>
-                                <span>Ética</span>
-                                <span>Fundamentos Engenharia de Software</span>
-                                <span>Segurança da Tecnologia da Informação</span>
-                                <span>Especificação de Sistemas de Informação</span>
-                                <span>Gestão de Projetos em Computação</span>
-                                <span>Inteligência Analítica em Negócios</span>
-                                <span>Fundamentos de Big Data</span>
-                                <span>Projeto de Sistemas de Informação</span>
-                                <span>Educação, Identidade e Solidariedade</span>
-                                <span>Interação Humano Computador</span>
-                                <span>Internet das Coisas em um Mundo Conectado</span>
-                                <span>Métodos Ágeis em TI</span>
-                                <span>Gestão de Serviços de Tecnologia da Informação</span>
-                                <span>Cloud Computing</span>
-                                <span>Desenvolvimento para dispositivos móveis</span>
-                                <span>Sistemas Web Seguros</span>
-                                <span>Tecnologias Para Desenvolvimento Web</span>
-                                <span>DevOps</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//Fim Container curso -->
-
-                    <!-- Container curso -->
-                    <div class="container-curso">
-                        <!-- Cabeçalho -->
-                        <header onclick="openCurso(2)" class="cabecalho-curso">
-                            <strong>Desenvolvimento Web</strong>
-                            <!--Btn mostrar conteudo-->
-                            <div id="chevron-2" class="btn-cabecalho-curso">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                                </svg>
-                            </div>
-                        </header>
-                        <!-- Corpo-->
-                        <div id="curso-2" style="display: none;" class="oculto">
-                            <strong style="display: block;">Udemy</strong>
-                            <div>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>CSS3 Intermediário & avançado</span>
-                                <span>HTML5 & CSS3</span>
-                                <span>Bootstrap 4 & Design responsivo</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap 4 & Design responsivo</span>
-                                <span>ECMAScript 2015 (ES6) e Orientação a Objetos</span>
-                                <span>Linguagem de Programação PHP  (Hypertext Preprocessor)</span>
-                                <span>PHP e Orientação a Objetos</span>
-                                <span>Banco de dados MySQL</span>
-                                <span>Ajax</span>
-                                <span>PHP com PDO e MySQL</span>
-                                <span>Publicação de aplicações Web na Internet</span>
-                                <span>jQuery</span>
-                                <span>Padrão de arquitetura MVC com PHP</span>
-                                <span>API com Slim Framework</span>
-                                <span>SASS</span>
-                                <span>Criando aplicações Mobile com IONIC</span>
-                                <span>WordPress</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//Fim Container curso -->
-
-                    <!-- Container curso -->
-                    <div class="container-curso">
-                        <!-- Cabeçalho -->
-                        <header onclick="openCurso(3)" class="cabecalho-curso">
-                            <strong>Desenvolvimento de Apps Android usando Java</strong>
-                            <!--Btn mostrar conteudo-->
-                            <div id="chevron-3" class="btn-cabecalho-curso">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                                </svg>
-                            </div>
-                        </header>
-                        <!-- Corpo-->
-                        <div style="display: none;" id="curso-3" class="oculto">
-                            <strong style="display: block;">Udemy</strong>
-                            <div>
-                                <span>Lógica e algoritimos</span>
-                                <span>Java - Fundamentos</span>
-                                <span>Java - Conceitos iniciais</span>
-                                <span>Java - Funções</span>
-                                <span>Java - Controle de fluxo</span>
-                                <span>Exceções</span>
-                                <span>Testes unitários</span>
-                                <span>[Java] Arrays</span>
-                                <span>[Java] Conceitos - Orientação a objetos</span>
-                                <span>[Java] Herança</span>
-                                <span>Layout - Conceitos de layout e LinearLayout</span>
-                                <span>Convenções de código</span>
-                                <span>Layout - RelativeLayout</span>
-                                <span>AndroidX e aplicações antigas</span>
-                                <span>Layout - Elementos</span>
-                                <span>Layout - ConstraintLayout</span>
-                                <span>Internacionalização</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//Fim Container curso -->
-
-                    <!-- Container curso -->
-                    <div class="container-curso">
-                        <!-- Cabeçalho -->
-                        <header onclick="openCurso(4)" class="cabecalho-curso">
-                            <strong>Python</strong>
-                            <!--Btn mostrar conteudo-->
-                            <div id="chevron-4" class="btn-cabecalho-curso">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                                </svg>
-                            </div>
-                        </header>
-                        <!-- Corpo-->
-                        <div style="display: none;" id="curso-4" class="oculto">
-                            <strong style="display: block;">Curso em Vídeo</strong>
-                            <div>
-                                <span>Tratamento de Dados</span>
-                                <span>Usando módulos</span>
-                                <span>Condições em Python</span>
-                                <span>Repetições em Python</span>
-                                <span>Tuplas em Python</span>
-                                <span>Listas em Python</span>
-                                <span>Dicionários em Python</span>
-                                <span>Funções em Python</span>
-                                <span>Modularização em Python</span>
-                                <span>Tratamento de Erros em Python</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//Fim Container curso -->
+                    <script>
+                        contructFormacao();
+                    </script>
 
                 </div>
 
@@ -538,7 +347,7 @@
                 <di id="grupo-container-portifolio">
 
                     <script>
-                        this.constructProjetos(projetos)
+                        this.constructProjetos(projetos);
                     </script>             
 
                 </div>
