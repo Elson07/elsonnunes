@@ -206,23 +206,5 @@ const formacao = [
             'Internacionalização'
         ]
         
-    },
-    {
-        curso : 'Python',
-        instituicao: 'Curso em Vídeo',
-        grade: [
-            'Tratamento de Dados',
-            'Usando módulos',
-            'Condições em Python',
-            'Repetições em Python',
-            'Tuplas em Python',
-            'Listas em Python',
-            'Dicionários em Python',
-            'Funções em Python',
-            'Modularização em Python',
-            'Tratamento de Erros em Python'
-        ]
-        
     }
-
 ];
