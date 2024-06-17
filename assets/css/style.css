@@ -172,6 +172,14 @@ h4{
     font-weight: 600;
 }
 
+/* Sobre */
+.container-text-sobre{
+    border:  1px solid rgb(141, 141, 141);
+    border-left: 14px solid rgb(141, 141, 141); 
+    padding: 5px;
+    margin-left: 8px;
+    box-shadow: 3px 4px 4px rgb(145, 145, 145);
+}
 
 /* Cards */
 .container-formacao{
